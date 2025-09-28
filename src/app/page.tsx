@@ -1,103 +1,163 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Sparkles, Search, TrendingUp, Heart, Coffee } from "lucide-react";
+
+export default function HomePage() {
+  const [query, setQuery] = useState("");
+  const router = useRouter();
+
+  const handleSearch = () => {
+    if (query.trim()) {
+      router.push(`/recommendations?q=${encodeURIComponent(query)}`);
+    }
+  };
+
+  const handlePresetClick = (preset: string) => {
+    router.push(`/recommendations?q=${encodeURIComponent(preset)}`);
+  };
+
+  const presets = [
+    { text: "Cozy fantasy with romance", icon: Heart },
+    { text: "Page-turning thrillers", icon: TrendingUp },
+    { text: "Coffee shop mystery", icon: Coffee },
+    { text: "Science fiction like The Martian", icon: Sparkles },
+  ];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Discover Your Next Favorite Book
+        </h1>
+        <p className="text-xl text-gray-600 mb-8">
+          Get personalized AI-powered recommendations based on your taste
+        </p>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      <Card className="max-w-2xl mx-auto mb-12">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Sparkles className="h-5 w-5 text-amber-500" />
+            Want a personalized recommendation?
+          </CardTitle>
+          <CardDescription>
+            Describe what you're looking for or choose from our suggestions
+            below
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="flex gap-2">
+            <Input
+              placeholder="e.g., I want something like The Martian but funnier&hellip;"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyPress={(e) => e.key === "Enter" && handleSearch()}
+              className="flex-1"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <Button onClick={handleSearch} disabled={!query.trim()}>
+              <Search className="h-4 w-4" />
+            </Button>
+          </div>
+
+          <div>
+            <p className="text-sm font-medium text-gray-700 mb-3">
+              Or try these popular requests:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {presets.map((preset, index) => {
+                const IconComponent = preset.icon;
+                return (
+                  <Button
+                    key={index}
+                    variant="outline"
+                    className="justify-start h-auto p-3 text-left"
+                    onClick={() => handlePresetClick(preset.text)}
+                  >
+                    <IconComponent className="h-4 w-4 mr-2 text-amber-500" />
+                    <span className="text-sm">{preset.text}</span>
+                  </Button>
+                );
+              })}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <Card>
+          <CardContent className="p-6 text-center">
+            <div className="text-3xl font-bold text-amber-600 mb-2">0</div>
+            <div className="text-sm text-gray-600">Books Read</div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-6 text-center">
+            <div className="text-3xl font-bold text-blue-600 mb-2">0</div>
+            <div className="text-sm text-gray-600">Want to Read</div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-6 text-center">
+            <div className="text-3xl font-bold text-green-600 mb-2">0</div>
+            <div className="text-sm text-gray-600">Currently Reading</div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Recent Activity</CardTitle>
+          <CardDescription>
+            Your reading activity will appear here
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="text-center py-8 text-gray-500">
+            <BookIcon className="h-12 w-12 mx-auto mb-4 opacity-50" />
+            <p>
+              Start by adding some books to your shelves or getting
+              recommendations!
+            </p>
+          </div>
+        </CardContent>
+      </Card>
     </div>
+  );
+}
+
+function BookIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
