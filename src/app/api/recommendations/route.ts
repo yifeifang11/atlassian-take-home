@@ -6,7 +6,12 @@ import { openaiService } from "@/lib/openai";
 
 // Type guard for MongoDB duplicate key errors
 function isMongoDBDuplicateError(error: unknown): error is { code: number } {
-  return typeof error === 'object' && error !== null && 'code' in error && (error as { code: number }).code === 11000;
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "code" in error &&
+    (error as { code: number }).code === 11000
+  );
 }
 
 export async function POST(req: NextRequest) {

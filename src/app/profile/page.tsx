@@ -9,7 +9,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { User, BookOpen, Target, Award, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  User,
+  BookOpen,
+  Target,
+  Award,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import Image from "next/image";
 
 interface UserStats {
@@ -40,7 +47,9 @@ export default function ProfilePage() {
     favorites: 0,
   });
   const [shelfBooks, setShelfBooks] = useState<ShelfBooks>({});
-  const [expandedShelves, setExpandedShelves] = useState<{[key: string]: boolean}>({});
+  const [expandedShelves, setExpandedShelves] = useState<{
+    [key: string]: boolean;
+  }>({});
   const [loading, setLoading] = useState(true);
   const [loadingShelf, setLoadingShelf] = useState<string | null>(null);
 
@@ -69,13 +78,13 @@ export default function ProfilePage() {
 
   const fetchShelfBooks = async (shelf: string) => {
     if (shelfBooks[shelf] || loadingShelf === shelf) return;
-    
+
     setLoadingShelf(shelf);
     try {
       const response = await fetch(`/api/books?shelf=${shelf}`);
       if (response.ok) {
         const data = await response.json();
-        setShelfBooks(prev => ({ ...prev, [shelf]: data.books }));
+        setShelfBooks((prev) => ({ ...prev, [shelf]: data.books }));
       }
     } catch (error) {
       console.error(`Failed to fetch ${shelf} books:`, error);
@@ -86,8 +95,8 @@ export default function ProfilePage() {
 
   const toggleShelf = async (shelf: string) => {
     const isExpanded = expandedShelves[shelf];
-    setExpandedShelves(prev => ({ ...prev, [shelf]: !isExpanded }));
-    
+    setExpandedShelves((prev) => ({ ...prev, [shelf]: !isExpanded }));
+
     if (!isExpanded && !shelfBooks[shelf]) {
       await fetchShelfBooks(shelf);
     }
@@ -110,7 +119,9 @@ export default function ProfilePage() {
         )}
       </div>
       <div className="flex-1 p-3">
-        <h4 className="font-semibold text-sm mb-1 line-clamp-2">{book.title}</h4>
+        <h4 className="font-semibold text-sm mb-1 line-clamp-2">
+          {book.title}
+        </h4>
         <p className="text-gray-600 text-xs mb-2">by {book.author}</p>
         {book.genres.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-2">
@@ -124,27 +135,25 @@ export default function ProfilePage() {
             ))}
           </div>
         )}
-        <p className="text-gray-600 text-xs line-clamp-2">
-          {book.description}
-        </p>
+        <p className="text-gray-600 text-xs line-clamp-2">{book.description}</p>
       </div>
     </Card>
   );
 
-  const ShelfCard = ({ 
-    title, 
-    description, 
-    count, 
-    icon: Icon, 
-    color, 
-    shelf 
-  }: { 
-    title: string; 
-    description: string; 
-    count: number; 
-    icon: React.ComponentType<{ className?: string }>; 
-    color: string; 
-    shelf: string; 
+  const ShelfCard = ({
+    title,
+    description,
+    count,
+    icon: Icon,
+    color,
+    shelf,
+  }: {
+    title: string;
+    description: string;
+    count: number;
+    icon: React.ComponentType<{ className?: string }>;
+    color: string;
+    shelf: string;
   }) => (
     <Card>
       <CardHeader>
@@ -174,10 +183,9 @@ export default function ProfilePage() {
         <div className="text-center py-4">
           <div className={`text-3xl font-bold ${color} mb-2`}>{count}</div>
           <p className="text-gray-600 text-sm">
-            {count === 0 
+            {count === 0
               ? "No books yet"
-              : `${count} book${count > 1 ? 's' : ''}`
-            }
+              : `${count} book${count > 1 ? "s" : ""}`}
           </p>
         </div>
 
@@ -196,7 +204,9 @@ export default function ProfilePage() {
                 ))}
               </div>
             ) : (
-              <p className="text-center text-gray-500 py-4">No books in this shelf</p>
+              <p className="text-center text-gray-500 py-4">
+                No books in this shelf
+              </p>
             )}
           </div>
         )}
@@ -270,22 +280,32 @@ export default function ProfilePage() {
                   <span>{stats.read}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-green-600 h-2 rounded-full" 
-                    style={{ width: `${Math.min((stats.read / (stats.read + stats.toRead + 1)) * 100, 100)}%` }}
+                  <div
+                    className="bg-green-600 h-2 rounded-full"
+                    style={{
+                      width: `${Math.min(
+                        (stats.read / (stats.read + stats.toRead + 1)) * 100,
+                        100
+                      )}%`,
+                    }}
                   ></div>
                 </div>
               </div>
-              
+
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span>Reading List Progress</span>
                   <span>{stats.reading} in progress</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-blue-600 h-2 rounded-full" 
-                    style={{ width: `${Math.min((stats.reading / Math.max(stats.reading, 1)) * 100, 100)}%` }}
+                  <div
+                    className="bg-blue-600 h-2 rounded-full"
+                    style={{
+                      width: `${Math.min(
+                        (stats.reading / Math.max(stats.reading, 1)) * 100,
+                        100
+                      )}%`,
+                    }}
                   ></div>
                 </div>
               </div>
@@ -301,9 +321,10 @@ export default function ProfilePage() {
           <CardContent>
             <div className="text-center py-4">
               <p className="text-gray-600 mb-4">
-                Get personalized book recommendations powered by AI based on your reading preferences.
+                Get personalized book recommendations powered by AI based on
+                your reading preferences.
               </p>
-              <Button onClick={() => window.location.href = '/'}>
+              <Button onClick={() => (window.location.href = "/")}>
                 Get Recommendations
               </Button>
             </div>
@@ -316,20 +337,23 @@ export default function ProfilePage() {
         <Card className="mt-8">
           <CardHeader>
             <CardTitle>Welcome to AI Goodreads!</CardTitle>
-            <CardDescription>Start your personalized reading journey</CardDescription>
+            <CardDescription>
+              Start your personalized reading journey
+            </CardDescription>
           </CardHeader>
           <CardContent className="text-center py-8">
             <p className="text-gray-600 mb-6">
-              Welcome! Start by getting AI-powered book recommendations tailored to your taste, 
-              then build your personal library as you discover new favorites.
+              Welcome! Start by getting AI-powered book recommendations tailored
+              to your taste, then build your personal library as you discover
+              new favorites.
             </p>
             <div className="space-x-4">
-              <Button onClick={() => window.location.href = '/'}>
+              <Button onClick={() => (window.location.href = "/")}>
                 Get Started
               </Button>
-              <Button 
+              <Button
                 variant="outline"
-                onClick={() => window.location.href = '/recommendations'}
+                onClick={() => (window.location.href = "/recommendations")}
               >
                 Browse Recommendations
               </Button>

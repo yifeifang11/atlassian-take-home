@@ -36,17 +36,17 @@ export class OpenLibraryService {
   private minRequestInterval = 100; // 100ms between requests
 
   private async sleep(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   private async throttleRequest(): Promise<void> {
     const now = Date.now();
     const timeSinceLastRequest = now - this.lastRequestTime;
-    
+
     if (timeSinceLastRequest < this.minRequestInterval) {
       await this.sleep(this.minRequestInterval - timeSinceLastRequest);
     }
-    
+
     this.lastRequestTime = Date.now();
   }
 
@@ -75,7 +75,7 @@ export class OpenLibraryService {
 
   async getWorkDetails(workKey: string): Promise<OpenLibraryWork> {
     await this.throttleRequest();
-    
+
     try {
       const response = await fetch(`${this.baseUrl}${workKey}.json`);
 
