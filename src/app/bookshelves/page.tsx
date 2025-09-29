@@ -45,19 +45,21 @@ export default function BookshelvesPage() {
   // Fetch user ratings for books (optimized batch request)
   const fetchUserRatings = async (bookIds: string[]) => {
     if (bookIds.length === 0) return [];
-    
+
     try {
-      const response = await fetch(`/api/user/ratings?bookIds=${bookIds.join(',')}`);
+      const response = await fetch(
+        `/api/user/ratings?bookIds=${bookIds.join(",")}`
+      );
       const data = await response.json();
-      
+
       // Convert the ratings map back to the expected format
-      return bookIds.map(bookId => ({
+      return bookIds.map((bookId) => ({
         bookId,
-        rating: data.ratings[bookId] || 0
+        rating: data.ratings[bookId] || 0,
       }));
     } catch (error) {
-      console.error('Failed to fetch ratings:', error);
-      return bookIds.map(bookId => ({ bookId, rating: 0 }));
+      console.error("Failed to fetch ratings:", error);
+      return bookIds.map((bookId) => ({ bookId, rating: 0 }));
     }
   };
 
@@ -79,24 +81,25 @@ export default function BookshelvesPage() {
       try {
         const response = await fetch("/api/books");
         const data = await response.json();
-        
+
         // Only fetch ratings for books that are marked as "read"
         // since those are the only ones that can have ratings
         const readBookIds = userBooksData.read || [];
-        const ratings = readBookIds.length > 0 ? await fetchUserRatings(readBookIds) : [];
-        
+        const ratings =
+          readBookIds.length > 0 ? await fetchUserRatings(readBookIds) : [];
+
         // Create a ratings map
         const ratingsMap = ratings.reduce((acc, { bookId, rating }) => {
           acc[bookId] = rating;
           return acc;
         }, {} as Record<string, number>);
-        
+
         // Add user ratings to books (only for read books)
         const booksWithRatings = data.map((book: Book) => ({
           ...book,
           userRating: ratingsMap[book.id] || 0,
         }));
-        
+
         setBooks(booksWithRatings);
       } catch (error) {
         console.error("Failed to fetch books:", error);
@@ -408,11 +411,11 @@ export default function BookshelvesPage() {
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
                       {/* Only show rating for read/reading books */}
-                      {(selectedShelf === "read" || selectedShelf === "reading" || 
-                        (selectedShelf === "all" && (
-                          userBooks.read.includes(book.id.toString()) || 
-                          userBooks.reading.includes(book.id.toString())
-                        ))) ? (
+                      {selectedShelf === "read" ||
+                      selectedShelf === "reading" ||
+                      (selectedShelf === "all" &&
+                        (userBooks.read.includes(book.id.toString()) ||
+                          userBooks.reading.includes(book.id.toString()))) ? (
                         <StarRating
                           bookId={book.id}
                           initialRating={book.userRating || 0}
@@ -420,30 +423,40 @@ export default function BookshelvesPage() {
                           readonly={false}
                           onRatingChange={async () => {
                             // Refresh the data to reflect any shelf changes
-                            const userBooksResponse = await fetch("/api/user/books");
+                            const userBooksResponse = await fetch(
+                              "/api/user/books"
+                            );
                             const userData = await userBooksResponse.json();
                             setUserBooks(userData);
-                            
+
                             // Re-fetch books with updated ratings
                             const booksResponse = await fetch("/api/books");
                             const booksData = await booksResponse.json();
-                            
+
                             // Only fetch ratings for books that are marked as "read"
                             const readBookIds = userData.read || [];
-                            const ratings = readBookIds.length > 0 ? await fetchUserRatings(readBookIds) : [];
-                            
+                            const ratings =
+                              readBookIds.length > 0
+                                ? await fetchUserRatings(readBookIds)
+                                : [];
+
                             // Create a ratings map
-                            const ratingsMap = ratings.reduce((acc, { bookId, rating }) => {
-                              acc[bookId] = rating;
-                              return acc;
-                            }, {} as Record<string, number>);
-                            
+                            const ratingsMap = ratings.reduce(
+                              (acc, { bookId, rating }) => {
+                                acc[bookId] = rating;
+                                return acc;
+                              },
+                              {} as Record<string, number>
+                            );
+
                             // Add user ratings to books (only for read books)
-                            const booksWithRatings = booksData.map((book: Book) => ({
-                              ...book,
-                              userRating: ratingsMap[book.id] || 0,
-                            }));
-                            
+                            const booksWithRatings = booksData.map(
+                              (book: Book) => ({
+                                ...book,
+                                userRating: ratingsMap[book.id] || 0,
+                              })
+                            );
+
                             setBooks(booksWithRatings);
                           }}
                         />

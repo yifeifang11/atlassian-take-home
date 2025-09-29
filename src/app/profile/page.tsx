@@ -60,16 +60,23 @@ export default function ProfilePage() {
     fetchUserStats();
   }, []);
 
-  // Load preferences from localStorage on mount
+  // Load preferences from database on mount
   useEffect(() => {
-    const savedPreferences = localStorage.getItem("userPreferences");
-    if (savedPreferences) {
+    const loadPreferences = async () => {
       try {
-        setPreferences(JSON.parse(savedPreferences));
+        const response = await fetch("/api/user/preferences");
+        if (response.ok) {
+          const data = await response.json();
+          setPreferences(data);
+        } else {
+          console.error("Failed to load preferences:", response.status);
+        }
       } catch (error) {
         console.error("Failed to load preferences:", error);
       }
-    }
+    };
+
+    loadPreferences();
   }, []);
 
   const handlePreferenceChange = (
@@ -101,11 +108,25 @@ export default function ProfilePage() {
 
   const savePreferences = async () => {
     try {
-      // For now, just simulate saving to localStorage
-      localStorage.setItem("userPreferences", JSON.stringify(preferences));
-      setHasUnsavedChanges(false);
-      setIsEditing(false);
-      alert("Preferences saved successfully!");
+      const response = await fetch("/api/user/preferences", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(preferences),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setPreferences(data.preferences);
+        setHasUnsavedChanges(false);
+        setIsEditing(false);
+        alert("Preferences saved successfully!");
+      } else {
+        const errorData = await response.json();
+        console.error("Failed to save preferences:", errorData);
+        alert("Failed to save preferences");
+      }
     } catch (error) {
       console.error("Failed to save preferences:", error);
       alert("Failed to save preferences");

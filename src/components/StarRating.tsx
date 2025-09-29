@@ -51,9 +51,11 @@ export function StarRating({
       if (response.ok) {
         setRating(starRating);
         onRatingChange?.(starRating);
-        
+
         // Show success feedback
-        console.log(`Successfully rated book ${bookId} with ${starRating} stars`);
+        console.log(
+          `Successfully rated book ${bookId} with ${starRating} stars`
+        );
       } else {
         console.error("Failed to save rating");
         alert("Failed to save rating. Please try again.");

@@ -32,6 +32,7 @@ import {
   CheckCircle,
   X,
 } from "lucide-react";
+import { ReadingChallenge } from "@/components/ReadingChallenge";
 
 interface Book {
   id: string;
@@ -367,20 +368,24 @@ export default function HomePage() {
               currentlyReading.books.slice(0, 1).map((book) => (
                 <div key={book.id}>
                   <div className="flex items-start gap-3">
-                    <Image
-                      src={
-                        book.coverUrl ||
-                        "https://via.placeholder.com/64x96?text=No+Cover"
-                      }
-                      alt={book.title}
-                      width={64}
-                      height={96}
-                      className="object-cover"
-                    />
+                    <Link href={`/book/${book.id}`}>
+                      <Image
+                        src={
+                          book.coverUrl ||
+                          "https://via.placeholder.com/64x96?text=No+Cover"
+                        }
+                        alt={book.title}
+                        width={64}
+                        height={96}
+                        className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    </Link>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-sm leading-tight mb-1 book-title">
-                        {book.title}
-                      </h3>
+                      <Link href={`/book/${book.id}`}>
+                        <h3 className="font-medium text-sm leading-tight mb-1 book-title cursor-pointer hover:text-[#01635d] transition-colors">
+                          {book.title}
+                        </h3>
+                      </Link>
                       <p className="text-xs text-gray-600 mb-2">
                         by {book.author}
                       </p>
@@ -422,25 +427,7 @@ export default function HomePage() {
           <div className="border-t border-gray-200 my-6"></div>
 
           {/* Reading Challenge */}
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold mb-3 font-sans uppercase">
-              2025 READING CHALLENGE
-            </h2>
-            <div className="text-center">
-              <div className="bg-teal-600 text-white p-4 mb-4">
-                <div className="text-4xl font-bold">2025</div>
-                <div className="text-sm">16 books completed</div>
-                <div className="text-sm">21 books behind schedule</div>
-                <div className="text-xs">16/50 (32%)</div>
-              </div>
-              <div className="text-xs font-medium text-teal-600 mb-2">
-                READING CHALLENGE
-              </div>
-              <Button size="sm" variant="outline" className="text-xs h-7">
-                View Challenge
-              </Button>
-            </div>
-          </div>
+          <ReadingChallenge booksRead={userShelves.read?.length || 0} />
 
           {/* Divider */}
           <div className="border-t border-gray-200 my-6"></div>

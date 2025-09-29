@@ -42,23 +42,25 @@ export async function POST(request: NextRequest) {
 
     // Check if the book is currently in "reading" shelf and move it to "read" if so
     const userState = await UserState.findOne({ userId });
-    
+
     if (userState && userState.readingIds.includes(bookId)) {
       // Remove from reading shelf
-      userState.readingIds = userState.readingIds.filter((id: string) => id !== bookId);
-      
+      userState.readingIds = userState.readingIds.filter(
+        (id: string) => id !== bookId
+      );
+
       // Add to read shelf (only if not already there)
       if (!userState.readIds.includes(bookId)) {
         userState.readIds.push(bookId);
       }
-      
+
       await userState.save();
     }
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       rating,
-      shelfMoved: userState?.readingIds.includes(bookId) ? true : false
+      shelfMoved: userState?.readingIds.includes(bookId) ? true : false,
     });
   } catch (error) {
     console.error("Error saving rating:", error);
@@ -79,16 +81,16 @@ export async function GET(request: NextRequest) {
 
     // Handle batch request for multiple book ratings
     if (bookIds) {
-      const bookIdArray = bookIds.split(",").filter(id => id.trim());
-      
+      const bookIdArray = bookIds.split(",").filter((id) => id.trim());
+
       if (bookIdArray.length === 0) {
         return NextResponse.json({ ratings: {} });
       }
 
       const userId = "default";
-      const ratingDocs = await Rating.find({ 
-        userId, 
-        bookId: { $in: bookIdArray } 
+      const ratingDocs = await Rating.find({
+        userId,
+        bookId: { $in: bookIdArray },
       });
 
       // Create a map of bookId -> rating
