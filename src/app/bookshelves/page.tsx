@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
-import { Star, Search } from "lucide-react";
+import { Search } from "lucide-react";
+import { StarRating } from "@/components/StarRating";
 
 interface Book {
   id: string;
@@ -14,6 +15,7 @@ interface Book {
   description: string;
   coverUrl?: string;
   rating?: number;
+  userRating?: number;
   dateRead?: string;
   dateAdded?: string;
 }
@@ -40,6 +42,25 @@ export default function BookshelvesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
+  // Fetch user ratings for books (optimized batch request)
+  const fetchUserRatings = async (bookIds: string[]) => {
+    if (bookIds.length === 0) return [];
+    
+    try {
+      const response = await fetch(`/api/user/ratings?bookIds=${bookIds.join(',')}`);
+      const data = await response.json();
+      
+      // Convert the ratings map back to the expected format
+      return bookIds.map(bookId => ({
+        bookId,
+        rating: data.ratings[bookId] || 0
+      }));
+    } catch (error) {
+      console.error('Failed to fetch ratings:', error);
+      return bookIds.map(bookId => ({ bookId, rating: 0 }));
+    }
+  };
+
   // Fetch user's book data
   useEffect(() => {
     const fetchUserBooks = async () => {
@@ -47,24 +68,48 @@ export default function BookshelvesPage() {
         const response = await fetch("/api/user/books");
         const data = await response.json();
         setUserBooks(data);
+        return data; // Return the data to use in the next step
       } catch (error) {
         console.error("Failed to fetch user books:", error);
+        return { read: [], toRead: [], reading: [], favorites: [] };
       }
     };
 
-    const fetchAllBooks = async () => {
+    const fetchAllBooks = async (userBooksData: UserBooks) => {
       try {
         const response = await fetch("/api/books");
         const data = await response.json();
-        setBooks(data);
+        
+        // Only fetch ratings for books that are marked as "read"
+        // since those are the only ones that can have ratings
+        const readBookIds = userBooksData.read || [];
+        const ratings = readBookIds.length > 0 ? await fetchUserRatings(readBookIds) : [];
+        
+        // Create a ratings map
+        const ratingsMap = ratings.reduce((acc, { bookId, rating }) => {
+          acc[bookId] = rating;
+          return acc;
+        }, {} as Record<string, number>);
+        
+        // Add user ratings to books (only for read books)
+        const booksWithRatings = data.map((book: Book) => ({
+          ...book,
+          userRating: ratingsMap[book.id] || 0,
+        }));
+        
+        setBooks(booksWithRatings);
       } catch (error) {
         console.error("Failed to fetch books:", error);
       }
     };
 
-    Promise.all([fetchUserBooks(), fetchAllBooks()]).finally(() => {
+    const loadData = async () => {
+      const userBooksData = await fetchUserBooks();
+      await fetchAllBooks(userBooksData);
       setIsLoading(false);
-    });
+    };
+
+    loadData();
   }, []);
 
   // Filter books based on selected shelf
@@ -362,14 +407,51 @@ export default function BookshelvesPage() {
                       <div className="text-sm text-gray-900">{book.author}</div>
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star
-                            key={star}
-                            className="h-3 w-3 fill-amber-400 text-amber-400"
-                          />
-                        ))}
-                      </div>
+                      {/* Only show rating for read/reading books */}
+                      {(selectedShelf === "read" || selectedShelf === "reading" || 
+                        (selectedShelf === "all" && (
+                          userBooks.read.includes(book.id.toString()) || 
+                          userBooks.reading.includes(book.id.toString())
+                        ))) ? (
+                        <StarRating
+                          bookId={book.id}
+                          initialRating={book.userRating || 0}
+                          size="sm"
+                          readonly={false}
+                          onRatingChange={async () => {
+                            // Refresh the data to reflect any shelf changes
+                            const userBooksResponse = await fetch("/api/user/books");
+                            const userData = await userBooksResponse.json();
+                            setUserBooks(userData);
+                            
+                            // Re-fetch books with updated ratings
+                            const booksResponse = await fetch("/api/books");
+                            const booksData = await booksResponse.json();
+                            
+                            // Only fetch ratings for books that are marked as "read"
+                            const readBookIds = userData.read || [];
+                            const ratings = readBookIds.length > 0 ? await fetchUserRatings(readBookIds) : [];
+                            
+                            // Create a ratings map
+                            const ratingsMap = ratings.reduce((acc, { bookId, rating }) => {
+                              acc[bookId] = rating;
+                              return acc;
+                            }, {} as Record<string, number>);
+                            
+                            // Add user ratings to books (only for read books)
+                            const booksWithRatings = booksData.map((book: Book) => ({
+                              ...book,
+                              userRating: ratingsMap[book.id] || 0,
+                            }));
+                            
+                            setBooks(booksWithRatings);
+                          }}
+                        />
+                      ) : (
+                        <div className="flex items-center text-sm text-gray-400">
+                          <span>-</span>
+                        </div>
+                      )}
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
                       <span className="text-sm text-[#01635d] hover:underline cursor-pointer">

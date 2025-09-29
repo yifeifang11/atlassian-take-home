@@ -142,31 +142,6 @@ export default function HomePage() {
     }
   };
 
-  // Function to add book to Want to Read shelf
-  const addToWantToRead = async (bookId: string, bookTitle: string) => {
-    try {
-      const response = await fetch("/api/user/books", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          bookId: bookId,
-          shelf: "toRead",
-        }),
-      });
-
-      if (response.ok) {
-        alert(`"${bookTitle}" added to Want to Read!`);
-      } else {
-        alert("Failed to add book to shelf");
-      }
-    } catch (error) {
-      console.error("Error adding book to shelf:", error);
-      alert("Error adding book to shelf");
-    }
-  };
-
   // Fetch user shelves data
   useEffect(() => {
     fetchUserShelves();

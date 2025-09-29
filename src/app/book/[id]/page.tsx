@@ -20,6 +20,7 @@ import {
   Star,
 } from "lucide-react";
 import booksData from "@/data/books.json";
+import { StarRating } from "@/components/StarRating";
 
 interface Book {
   id: string;
@@ -29,6 +30,7 @@ interface Book {
   coverUrl?: string;
   genres: string[];
   tags?: string[];
+  userRating?: number;
 }
 
 interface UserShelves {
@@ -50,7 +52,9 @@ export default function BookPage() {
     reading: [],
     favorites: [],
   });
+  const [userRating, setUserRating] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingRating, setIsLoadingRating] = useState(true);
 
   // Find book from data
   useEffect(() => {
@@ -70,9 +74,29 @@ export default function BookPage() {
     }
   };
 
+  // Fetch user rating for this book
+  const fetchUserRating = async (bookId: string) => {
+    try {
+      setIsLoadingRating(true);
+      const response = await fetch(`/api/user/ratings?bookId=${bookId}`);
+      const data = await response.json();
+      setUserRating(data.rating || 0);
+    } catch (error) {
+      console.error("Failed to fetch user rating:", error);
+    } finally {
+      setIsLoadingRating(false);
+    }
+  };
+
   useEffect(() => {
     fetchUserShelves();
   }, []);
+
+  useEffect(() => {
+    if (bookId) {
+      fetchUserRating(bookId);
+    }
+  }, [bookId]);
 
   // Get current shelf status for a book
   const getBookShelfStatus = (bookId: string) => {
@@ -327,14 +351,24 @@ export default function BookPage() {
             <div className="space-y-3">
               <ShelfButton bookId={book.id} bookTitle={book.title} />
 
-              {/* Rating placeholder */}
-              <div className="flex items-center space-x-1 text-sm text-gray-600">
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-gray-300" />
-                  ))}
-                </div>
-                <span>Rate this book</span>
+              {/* Rating */}
+              <div className="flex items-center space-x-1">
+                {isLoadingRating ? (
+                  <div className="flex space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-gray-300 animate-pulse" />
+                    ))}
+                  </div>
+                ) : (
+                  <StarRating
+                    bookId={book.id}
+                    initialRating={userRating}
+                    onRatingChange={(rating) => {
+                      setUserRating(rating);
+                    }}
+                    size="md"
+                  />
+                )}
               </div>
             </div>
           </div>
