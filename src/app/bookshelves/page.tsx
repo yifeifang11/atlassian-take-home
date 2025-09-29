@@ -344,18 +344,22 @@ export default function BookshelvesPage() {
                     className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
                   >
                     <td className="px-4 py-4 whitespace-nowrap">
-                      <Image
-                        src={book.coverUrl || "/placeholder-book.jpg"}
-                        alt={book.title}
-                        width={40}
-                        height={60}
-                        className="object-cover"
-                      />
+                      <Link href={`/book/${book.id}`}>
+                        <Image
+                          src={book.coverUrl || "/placeholder-book.jpg"}
+                          alt={book.title}
+                          width={40}
+                          height={60}
+                          className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                        />
+                      </Link>
                     </td>
                     <td className="px-4 py-4">
-                      <div className="text-sm book-title font-medium text-[#01635d] hover:underline cursor-pointer">
-                        {book.title}
-                      </div>
+                      <Link href={`/book/${book.id}`}>
+                        <div className="text-sm book-title font-medium text-[#01635d] hover:underline cursor-pointer">
+                          {book.title}
+                        </div>
+                      </Link>
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">{book.author}</div>

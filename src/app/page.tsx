@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -289,22 +290,7 @@ export default function HomePage() {
 
     const { icon: Icon, text, className, style } = getButtonConfig();
 
-    if (!currentShelf) {
-      // Book not on any shelf - show simple "Want to Read" button
-      return (
-        <Button
-          size="sm"
-          className={`text-xs h-6 ${className}`}
-          style={style}
-          onClick={() => moveBookToShelf(bookId, "toRead", bookTitle)}
-        >
-          <Icon className="w-3 h-3 mr-1" />
-          {text} ▼
-        </Button>
-      );
-    }
-
-    // Book is on a shelf - show dropdown to change shelves
+    // Always show dropdown for shelf selection
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -348,14 +334,18 @@ export default function HomePage() {
               Read
             </DropdownMenuItem>
           )}
-          {currentShelf === "toRead" && (
-            <DropdownMenuItem
-              onClick={() => moveBookToShelf(bookId, null, bookTitle)}
-              className="text-xs hover:bg-red-50 cursor-pointer text-red-600"
-            >
-              <X className="w-3 h-3 mr-2" />
-              Remove from Shelf
-            </DropdownMenuItem>
+          {/* Add separator and remove option for any shelf */}
+          {currentShelf && (
+            <>
+              <div className="border-t border-gray-200 my-1"></div>
+              <DropdownMenuItem
+                onClick={() => moveBookToShelf(bookId, null, bookTitle)}
+                className="text-xs hover:bg-red-50 cursor-pointer text-red-600"
+              >
+                <X className="w-3 h-3 mr-2" />
+                Remove from Shelf
+              </DropdownMenuItem>
+            </>
           )}
         </DropdownMenuContent>
       </DropdownMenu>
@@ -422,9 +412,11 @@ export default function HomePage() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="text-xs h-7"
+                        className="text-xs h-7 border-green-600 text-green-600 hover:bg-green-50"
+                        onClick={() => moveBookToShelf(book.id, "read", book.title)}
                       >
-                        Update progress
+                        <CheckCircle className="w-3 h-3 mr-1" />
+                        Mark as Read
                       </Button>
                     </div>
                   </div>
@@ -671,15 +663,19 @@ export default function HomePage() {
                         <span className="text-xs text-gray-500">2w</span>
                       </div>
                       <div className="flex gap-3">
-                        <img
-                          src="https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg"
-                          alt="Dune"
-                          className="w-16 h-24 object-cover"
-                        />
+                        <Link href="/book/dune">
+                          <img
+                            src="https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg"
+                            alt="Dune"
+                            className="w-16 h-24 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                          />
+                        </Link>
                         <div>
-                          <h3 className="font-medium text-sm mb-1 book-title">
-                            Dune
-                          </h3>
+                          <Link href="/book/dune">
+                            <h3 className="font-medium text-sm mb-1 book-title hover:underline cursor-pointer text-[#01635d]">
+                              Dune
+                            </h3>
+                          </Link>
                           <p className="text-xs text-gray-600 mb-2">
                             by Frank Herbert
                           </p>
@@ -728,15 +724,19 @@ export default function HomePage() {
                         <span className="text-xs text-gray-500">1w</span>
                       </div>
                       <div className="flex gap-3">
-                        <img
-                          src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
-                          alt="Atomic Habits"
-                          className="w-16 h-24 object-cover"
-                        />
+                        <Link href="/book/atomic_habits">
+                          <img
+                            src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+                            alt="Atomic Habits"
+                            className="w-16 h-24 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                          />
+                        </Link>
                         <div>
-                          <h3 className="font-medium text-sm mb-1 book-title">
-                            Atomic Habits
-                          </h3>
+                          <Link href="/book/atomic_habits">
+                            <h3 className="font-medium text-sm mb-1 book-title hover:underline cursor-pointer text-[#01635d]">
+                              Atomic Habits
+                            </h3>
+                          </Link>
                           <p className="text-xs text-gray-600 mb-2">
                             by James Clear
                           </p>
@@ -769,15 +769,19 @@ export default function HomePage() {
                         <span className="text-xs text-gray-500">3d</span>
                       </div>
                       <div className="flex gap-3">
-                        <img
-                          src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg"
-                          alt="Sapiens"
-                          className="w-16 h-24 object-cover"
-                        />
+                        <Link href="/book/sapiens">
+                          <img
+                            src="https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg"
+                            alt="Sapiens"
+                            className="w-16 h-24 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                          />
+                        </Link>
                         <div>
-                          <h3 className="font-medium text-sm mb-1 book-title">
-                            Sapiens
-                          </h3>
+                          <Link href="/book/sapiens">
+                            <h3 className="font-medium text-sm mb-1 book-title hover:underline cursor-pointer text-[#01635d]">
+                              Sapiens
+                            </h3>
+                          </Link>
                           <p className="text-xs text-gray-600 mb-2">
                             by Yuval Noah Harari
                           </p>
@@ -818,15 +822,19 @@ export default function HomePage() {
                         <span className="text-xs text-gray-500">5d</span>
                       </div>
                       <div className="flex gap-3">
-                        <img
-                          src="https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg"
-                          alt="Circe"
-                          className="w-16 h-24 object-cover"
-                        />
+                        <Link href="/book/circe">
+                          <img
+                            src="https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg"
+                            alt="Circe"
+                            className="w-16 h-24 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                          />
+                        </Link>
                         <div>
-                          <h3 className="font-medium text-sm mb-1 book-title">
-                            Circe
-                          </h3>
+                          <Link href="/book/circe">
+                            <h3 className="font-medium text-sm mb-1 book-title hover:underline cursor-pointer text-[#01635d]">
+                              Circe
+                            </h3>
+                          </Link>
                           <p className="text-xs text-gray-600 mb-2">
                             by Madeline Miller
                           </p>
