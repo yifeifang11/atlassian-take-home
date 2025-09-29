@@ -78,6 +78,58 @@ export async function POST(req: NextRequest) {
   }
 }
 
+export async function DELETE(req: NextRequest) {
+  try {
+    await dbConnect();
+
+    const { bookId } = await req.json();
+
+    if (!bookId) {
+      return NextResponse.json(
+        { error: "Book ID is required" },
+        { status: 400 }
+      );
+    }
+
+    // Get user state
+    const userState = await UserState.findOne({ userId: "default" });
+
+    if (!userState) {
+      return NextResponse.json(
+        { error: "User state not found" },
+        { status: 404 }
+      );
+    }
+
+    // Remove book from all shelves
+    userState.readIds = userState.readIds.filter((id: string) => id !== bookId);
+    userState.toReadIds = userState.toReadIds.filter(
+      (id: string) => id !== bookId
+    );
+    userState.readingIds = userState.readingIds.filter(
+      (id: string) => id !== bookId
+    );
+
+    await userState.save();
+
+    return NextResponse.json({
+      success: true,
+      message: "Book removed from all shelves",
+      counts: {
+        read: userState.readIds.length,
+        toRead: userState.toReadIds.length,
+        reading: userState.readingIds.length,
+      },
+    });
+  } catch (error) {
+    console.error("Delete book API error:", error);
+    return NextResponse.json(
+      { error: "Failed to remove book from shelf" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function GET() {
   try {
     await dbConnect();

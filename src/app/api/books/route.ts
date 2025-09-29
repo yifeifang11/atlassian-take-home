@@ -2,15 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongodb";
 import { Book } from "@/models/Book";
 import { UserState } from "@/models/UserState";
+import booksData from "@/data/books.json";
 
 export async function GET(req: NextRequest) {
   try {
-    await dbConnect();
-
     const { searchParams } = new URL(req.url);
     const shelf = searchParams.get("shelf");
 
-    if (!shelf || !["read", "toRead", "reading", "favorites"].includes(shelf)) {
+    // If no shelf parameter, return all books from JSON data
+    if (!shelf) {
+      return NextResponse.json(booksData);
+    }
+
+    // Original shelf-based logic
+    await dbConnect();
+
+    if (!["read", "toRead", "reading", "favorites"].includes(shelf)) {
       return NextResponse.json(
         { error: "Invalid shelf parameter" },
         { status: 400 }
@@ -40,10 +47,26 @@ export async function GET(req: NextRequest) {
         break;
     }
 
-    // Fetch book details
+    // Fetch book details from MongoDB first
     const books = await Book.find({ id: { $in: bookIds } })
       .select("-embedding")
       .lean();
+
+    // If no books found in MongoDB, fall back to JSON data
+    if (books.length === 0 && bookIds.length > 0) {
+      const jsonBooks = booksData.filter((book) => bookIds.includes(book.id));
+      return NextResponse.json({
+        books: jsonBooks.map((book) => ({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          genres: book.genres || [],
+          description: book.description,
+          coverUrl: book.coverUrl,
+        })),
+        total: jsonBooks.length,
+      });
+    }
 
     return NextResponse.json({
       books: books.map((book) => ({

@@ -30,6 +30,30 @@ function RecommendationsContent() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [feedbackLoading, setFeedbackLoading] = useState<string | null>(null);
+  const [userShelves, setUserShelves] = useState<{
+    read: string[];
+    toRead: string[];
+    reading: string[];
+  }>({ read: [], toRead: [], reading: [] });
+
+  const fetchUserShelves = async () => {
+    try {
+      const response = await fetch("/api/user/books");
+      if (response.ok) {
+        const data = await response.json();
+        setUserShelves(data);
+      }
+    } catch (error) {
+      console.error("Failed to fetch user shelves:", error);
+    }
+  };
+
+  const getBookShelfStatus = (bookId: string) => {
+    if (userShelves.read.includes(bookId)) return "read";
+    if (userShelves.toRead.includes(bookId)) return "toRead";
+    if (userShelves.reading.includes(bookId)) return "reading";
+    return null;
+  };
 
   const fetchRecommendations = async (userQuery: string) => {
     if (!userQuery) return;
@@ -101,6 +125,9 @@ function RecommendationsContent() {
         throw new Error("Failed to add book to shelf");
       }
 
+      // Refresh user shelves data
+      await fetchUserShelves();
+
       // Show success message or update UI
       alert("Book added to shelf!");
     } catch (err) {
@@ -108,6 +135,10 @@ function RecommendationsContent() {
       alert("Failed to add book to shelf");
     }
   };
+
+  useEffect(() => {
+    fetchUserShelves();
+  }, []);
 
   useEffect(() => {
     if (query) {
@@ -229,13 +260,53 @@ function RecommendationsContent() {
 
                     {/* Actions */}
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Button
-                        onClick={() => handleAddToShelf(rec.book.id, "toRead")}
-                        className="flex-1"
-                      >
-                        <Plus className="h-4 w-4 mr-2" />
-                        Add to To Read
-                      </Button>
+                      {(() => {
+                        const shelfStatus = getBookShelfStatus(rec.book.id);
+
+                        if (shelfStatus === "read") {
+                          return (
+                            <Button
+                              variant="outline"
+                              className="flex-1"
+                              disabled
+                            >
+                              ✓ Already Read
+                            </Button>
+                          );
+                        } else if (shelfStatus === "reading") {
+                          return (
+                            <Button
+                              variant="outline"
+                              className="flex-1"
+                              disabled
+                            >
+                              📖 Currently Reading
+                            </Button>
+                          );
+                        } else if (shelfStatus === "toRead") {
+                          return (
+                            <Button
+                              variant="outline"
+                              className="flex-1"
+                              disabled
+                            >
+                              📚 Want to Read
+                            </Button>
+                          );
+                        } else {
+                          return (
+                            <Button
+                              onClick={() =>
+                                handleAddToShelf(rec.book.id, "toRead")
+                              }
+                              className="flex-1"
+                            >
+                              <Plus className="h-4 w-4 mr-2" />
+                              Add to To Read
+                            </Button>
+                          );
+                        }
+                      })()}
 
                       <div className="flex gap-2">
                         <Button

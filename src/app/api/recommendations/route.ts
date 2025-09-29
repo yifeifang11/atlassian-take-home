@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { openaiService } from "@/lib/openai";
 import booksData from "@/data/books.json";
+import dbConnect from "@/lib/mongodb";
+import { UserState } from "@/models/UserState";
 
 interface Book {
   id: string;
@@ -22,10 +24,32 @@ export async function POST(req: NextRequest) {
 
     console.log(`Getting recommendations for: "${query}"`);
 
+    // Get user's shelf data to filter out books already on shelves
+    await dbConnect();
+    const userState = await UserState.findOne({ userId: "default" });
+
+    const userBooks = userState
+      ? [...userState.readIds, ...userState.toReadIds, ...userState.readingIds]
+      : [];
+
+    console.log(
+      `User has ${userBooks.length} books on shelves, filtering them out`
+    );
+
+    // Filter out books that are already on user's shelves
+    const availableBooks = (booksData as Book[]).filter(
+      (book) => !userBooks.includes(book.id)
+    );
+
+    console.log(
+      `Filtered down to ${availableBooks.length} available books for recommendations`
+    );
+
     // Use ChatGPT to analyze the query and select books
     const recommendations = await getAIRecommendations(
       query,
-      booksData as Book[]
+      availableBooks,
+      userState?.readIds || []
     );
 
     console.log(`Found ${recommendations.length} recommendations`);
@@ -43,26 +67,42 @@ export async function POST(req: NextRequest) {
   }
 }
 
-async function getAIRecommendations(userQuery: string, books: Book[]) {
+async function getAIRecommendations(
+  userQuery: string,
+  books: Book[],
+  readBooks: string[]
+) {
   // Create a more concise book list to avoid token limits
   const bookList = books
     .map(
       (book, index) =>
-        `${index + 1}. "${book.title}" by ${book.author} (${book.genres.join(", ")}) - ${book.description.substring(0, 80)}...`
+        `${index + 1}. "${book.title}" by ${book.author} (${book.genres.join(
+          ", "
+        )}) - ${book.description.substring(0, 80)}...`
     )
     .join("\n");
 
-  const prompt = `You are a book recommendation expert. Based on the user's request, select exactly 6 BEST matching books from this curated list. 
+  // Create context about user's reading history if available
+  const readBooksContext =
+    readBooks.length > 0
+      ? `\n\nUser's reading history (books they've already read): ${readBooks.join(
+          ", "
+        )}`
+      : "\n\nUser's reading history: No previous books recorded";
 
-User's request: "${userQuery}"
+  const prompt = `You are a book recommendation expert. Based on the user's request and their reading history, select exactly 6 BEST matching books from this curated list. 
 
-Available books:
+User's request: "${userQuery}"${readBooksContext}
+
+Available books (excluding books already on user's shelves):
 ${bookList}
 
 Instructions:
 1. If they want "happy" books, avoid tragic, sad, or dark themes
 2. Match their emotional needs and preferences carefully
-3. Provide variety in your selections
+3. Consider their reading history to suggest similar or complementary books
+4. Provide variety in your selections
+5. ONLY recommend books from the available list above
 
 Respond with exactly 6 book recommendations in this simple format:
 BOOK: [number]
@@ -86,7 +126,7 @@ REASON: This philosophical novel offers hope and positive reflections on life ch
 
     // Parse the simple format instead of JSON
     const bookMatches = response.match(/BOOK:\s*(\d+)\s*\nREASON:\s*([^\n]+)/g);
-    
+
     if (!bookMatches || bookMatches.length === 0) {
       console.log("No book matches found in response, using fallback");
       return getFallbackBooks(books);
@@ -94,20 +134,20 @@ REASON: This philosophical novel offers hope and positive reflections on life ch
 
     const recommendations = bookMatches
       .slice(0, 6)
-      .map(match => {
+      .map((match) => {
         const bookMatch = match.match(/BOOK:\s*(\d+)\s*\nREASON:\s*([^\n]+)/);
         if (!bookMatch) return null;
-        
+
         const bookNumber = parseInt(bookMatch[1]);
         const explanation = bookMatch[2].trim();
         const bookIndex = bookNumber - 1;
         const book = books[bookIndex];
-        
+
         if (!book) {
           console.warn(`Invalid book number: ${bookNumber}`);
           return null;
         }
-        
+
         return {
           book: {
             id: book.id,
@@ -118,14 +158,17 @@ REASON: This philosophical novel offers hope and positive reflections on life ch
             coverUrl: book.coverUrl,
           },
           explanation: explanation,
-          similarity: Math.random() * 0.2 + 0.8
+          similarity: Math.random() * 0.2 + 0.8,
         };
       })
       .filter(Boolean);
 
-    console.log(`Successfully parsed ${recommendations.length} recommendations from AI`);
-    return recommendations.length > 0 ? recommendations : getFallbackBooks(books);
-    
+    console.log(
+      `Successfully parsed ${recommendations.length} recommendations from AI`
+    );
+    return recommendations.length > 0
+      ? recommendations
+      : getFallbackBooks(books);
   } catch (error) {
     console.error("AI recommendation error:", error);
     return getFallbackBooks(books);
@@ -227,7 +270,9 @@ function getFallbackBooks(books: Book[]) {
         description: book.description,
         coverUrl: book.coverUrl,
       },
-      explanation: `This ${book.genres.join(" and ")} book was selected from our curated collection for your preferences.`,
+      explanation: `This ${book.genres.join(
+        " and "
+      )} book was selected from our curated collection for your preferences.`,
       similarity: Math.random() * 0.3 + 0.7,
     }));
 }
