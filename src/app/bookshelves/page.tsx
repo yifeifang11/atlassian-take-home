@@ -321,9 +321,6 @@ export default function BookshelvesPage() {
                     Author
                   </th>
                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Avg Rating
-                  </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Rating
                   </th>
                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -363,19 +360,6 @@ export default function BookshelvesPage() {
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">{book.author}</div>
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
-                      <div className="flex items-center">
-                        <div className="flex">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <Star
-                              key={star}
-                              className="h-3 w-3 fill-amber-400 text-amber-400"
-                            />
-                          ))}
-                        </div>
-                        <span className="ml-1 text-xs text-gray-600">4.2</span>
-                      </div>
                     </td>
                     <td className="px-4 py-4 whitespace-nowrap">
                       <div className="flex">

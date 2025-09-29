@@ -413,7 +413,9 @@ export default function HomePage() {
                         size="sm"
                         variant="outline"
                         className="text-xs h-7 border-green-600 text-green-600 hover:bg-green-50"
-                        onClick={() => moveBookToShelf(book.id, "read", book.title)}
+                        onClick={() =>
+                          moveBookToShelf(book.id, "read", book.title)
+                        }
                       >
                         <CheckCircle className="w-3 h-3 mr-1" />
                         Mark as Read
@@ -494,17 +496,18 @@ export default function HomePage() {
               <>
                 <div className="grid grid-cols-3 gap-2 mb-4">
                   {wantToReadBooks.slice(0, 3).map((book) => (
-                    <Image
-                      key={book.id}
-                      src={
-                        book.coverUrl ||
-                        "https://via.placeholder.com/60x80?text=No+Cover"
-                      }
-                      alt={book.title}
-                      width={60}
-                      height={80}
-                      className="object-cover"
-                    />
+                    <Link key={book.id} href={`/book/${book.id}`}>
+                      <Image
+                        src={
+                          book.coverUrl ||
+                          "https://via.placeholder.com/60x80?text=No+Cover"
+                        }
+                        alt={book.title}
+                        width={60}
+                        height={80}
+                        className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    </Link>
                   ))}
                   {wantToReadBooks.length < 3 &&
                     Array.from({ length: 3 - wantToReadBooks.length }).map(

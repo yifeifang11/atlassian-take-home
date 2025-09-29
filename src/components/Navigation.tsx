@@ -95,8 +95,11 @@ export function Navigation() {
           </div>
 
           {/* Search Bar */}
-          <div className="flex-1 max-w-lg mx-8 relative" ref={searchRef}>
-            <div className="relative">
+          <div
+            className="flex-1 max-w-lg mx-8 relative flex items-center"
+            ref={searchRef}
+          >
+            <div className="relative w-full">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
                 <Search className="h-5 w-5 text-gray-400" />
               </div>
@@ -188,6 +191,13 @@ export function Navigation() {
               className="text-gray-700 hover:text-amber-600 px-3 py-2 font-sans"
             >
               My Library
+            </Link>
+
+            <Link
+              href="/profile"
+              className="text-gray-700 hover:text-amber-600 px-3 py-2 font-sans"
+            >
+              Profile
             </Link>
           </div>
         </div>
