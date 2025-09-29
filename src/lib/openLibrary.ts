@@ -55,10 +55,11 @@ export class OpenLibraryService {
     limit: number = 30
   ): Promise<OpenLibraryBook[]> {
     try {
+      // Search with sorting by popularity/edition count to get more popular books
       const response = await fetch(
         `${this.baseUrl}/search.json?q=${encodeURIComponent(
           query
-        )}&limit=${limit}`
+        )}&limit=${limit}&sort=edition_count`
       );
 
       if (!response.ok) {
@@ -66,7 +67,25 @@ export class OpenLibraryService {
       }
 
       const data = await response.json();
-      return data.docs || [];
+      const books = data.docs || [];
+
+      // Filter and sort books by quality indicators
+      return books
+        .filter((book: OpenLibraryBook) => {
+          // Only include books with covers and reasonable metadata
+          return (
+            book.cover_i &&
+            book.title &&
+            book.author_name &&
+            book.author_name.length > 0 &&
+            book.edition_count &&
+            book.edition_count > 1
+          ); // Multiple editions = popular
+        })
+        .sort((a: OpenLibraryBook, b: OpenLibraryBook) => {
+          // Sort by edition count (popularity indicator)
+          return (b.edition_count || 0) - (a.edition_count || 0);
+        });
     } catch (error) {
       console.error("Error searching Open Library:", error);
       throw error;

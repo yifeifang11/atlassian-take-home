@@ -1,0 +1,821 @@
+[
+  {
+    "id": "atomic_habits",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genres": ["Self-Help", "Psychology", "Productivity"],
+    "description": "An Easy & Proven Way to Build Good Habits & Break Bad Ones. Tiny changes, remarkable results. No matter your goals, Atomic Habits offers a proven framework for improving every day.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+    "tags": ["habits", "productivity", "self-improvement", "psychology", "success"]
+  },
+  {
+    "id": "educated",
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genres": ["Memoir", "Biography", "Education"],
+    "description": "A memoir about a young girl who, kept out of school, leaves her survivalist family and goes on to earn a PhD from Cambridge University.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg",
+    "tags": ["education", "family", "resilience", "transformation", "inspiring"]
+  },
+  {
+    "id": "seven_husbands_evelyn",
+    "title": "The Seven Husbands of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "genres": ["Romance", "Historical Fiction", "LGBTQ+"],
+    "description": "A reclusive Hollywood icon finally tells her story to a young journalist, revealing her scandalous life, her seven marriages, and the price of fame and love.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781501161933-L.jpg",
+    "tags": ["love", "fame", "secrets", "Hollywood", "emotional"]
+  },
+  {
+    "id": "where_crawdads_sing",
+    "title": "Where the Crawdads Sing",
+    "author": "Delia Owens",
+    "genres": ["Fiction", "Mystery", "Coming-of-age"],
+    "description": "A mystery about a young woman who raised herself in the marshes of the deep South, becoming a suspect in a murder case.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780735219090-L.jpg",
+    "tags": ["mystery", "nature", "isolation", "coming-of-age", "suspense"]
+  },
+  {
+    "id": "dune",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genres": ["Science Fiction", "Fantasy", "Adventure"],
+    "description": "Set in the distant future amidst a feudal interstellar society, this epic tale follows young Paul Atreides as his family becomes embroiled in a war for control of the desert planet Arrakis.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg",
+    "tags": ["epic", "space", "politics", "power", "adventure"]
+  },
+  {
+    "id": "becoming",
+    "title": "Becoming",
+    "author": "Michelle Obama",
+    "genres": ["Memoir", "Biography", "Politics"],
+    "description": "Former First Lady Michelle Obama's deeply personal memoir describing her journey from childhood to the White House.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781524763138-L.jpg",
+    "tags": ["politics", "inspiration", "leadership", "family", "growth"]
+  },
+  {
+    "id": "project_hail_mary",
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "genres": ["Science Fiction", "Adventure", "Humor"],
+    "description": "A lone astronaut must save humanity in this science-packed thriller that combines hard science with an engaging story.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg",
+    "tags": ["space", "science", "humor", "survival", "friendship"]
+  },
+  {
+    "id": "the_midnight_library",
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "genres": ["Fiction", "Philosophy", "Fantasy"],
+    "description": "Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg",
+    "tags": ["philosophy", "choices", "regret", "second-chances", "meaning"]
+  },
+  {
+    "id": "book_thief",
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "genres": ["Historical Fiction", "Young Adult", "War"],
+    "description": "Set during World War II in Germany, this is the story of Liesel Meminger, a foster girl living outside of Munich, who scratches out a meager existence by stealing books.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg",
+    "tags": ["war", "books", "death", "friendship", "courage"]
+  },
+  {
+    "id": "circe",
+    "title": "Circe",
+    "author": "Madeline Miller",
+    "genres": ["Fantasy", "Mythology", "Historical Fiction"],
+    "description": "The story of Circe, the nymph from Homer's Odyssey, who discovers her power of witchcraft and must choose between the gods and mortals.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg",
+    "tags": ["mythology", "magic", "transformation", "power", "independence"]
+  },
+  {
+    "id": "klara_and_sun",
+    "title": "Klara and the Sun",
+    "author": "Kazuo Ishiguro",
+    "genres": ["Science Fiction", "Literary Fiction", "Dystopian"],
+    "description": "From the Nobel Prize-winning author comes this beautiful story about an artificial friend's journey to understand the human heart.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780571364879-L.jpg",
+    "tags": ["AI", "love", "sacrifice", "humanity", "friendship"]
+  },
+  {
+    "id": "song_of_achilles",
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "genres": ["Fantasy", "Romance", "Mythology"],
+    "description": "A tale of gods, kings, immortal fame and the human heart, The Song of Achilles is a dazzling literary feat that brilliantly reimagines Homer's enduring masterwork, The Iliad.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062060624-L.jpg",
+    "tags": ["mythology", "love", "war", "friendship", "tragedy"]
+  },
+  {
+    "id": "invisible_man",
+    "title": "The Invisible Man",
+    "author": "Ralph Ellison",
+    "genres": ["Literary Fiction", "Classic", "Social Commentary"],
+    "description": "A landmark novel that chronicles the journey of an African American man's search for identity and meaning in a society that refuses to see him.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780679732761-L.jpg",
+    "tags": ["identity", "racism", "society", "coming-of-age", "classic"]
+  },
+  {
+    "id": "normal_people",
+    "title": "Normal People",
+    "author": "Sally Rooney",
+    "genres": ["Literary Fiction", "Romance", "Coming-of-age"],
+    "description": "A story of mutual fascination, friendship and love following Connell and Marianne from different backgrounds through their years at Trinity College Dublin.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780571334650-L.jpg",
+    "tags": ["relationships", "class", "love", "friendship", "modern"]
+  },
+  {
+    "id": "pride_prejudice",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genres": ["Romance", "Classic", "Literary Fiction"],
+    "description": "The classic tale of Elizabeth Bennet and Mr. Darcy, exploring themes of marriage, money, and social class in Regency England.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+    "tags": ["romance", "classic", "society", "marriage", "wit"]
+  },
+  {
+    "id": "1984",
+    "title": "1984",
+    "author": "George Orwell",
+    "genres": ["Dystopian", "Political Fiction", "Classic"],
+    "description": "A dystopian social science fiction novel about totalitarian control, surveillance, and the individual's struggle against an oppressive state.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780452284234-L.jpg",
+    "tags": ["dystopia", "totalitarianism", "surveillance", "freedom", "politics"]
+  },
+  {
+    "id": "little_women",
+    "title": "Little Women",
+    "author": "Louisa May Alcott",
+    "genres": ["Classic", "Coming-of-age", "Family"],
+    "description": "The beloved story of the four March sisters - Meg, Jo, Beth, and Amy - growing up during the Civil War.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780147514011-L.jpg",
+    "tags": ["family", "sisters", "growing-up", "classic", "love"]
+  },
+  {
+    "id": "harry_potter_stone",
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "genres": ["Fantasy", "Young Adult", "Adventure"],
+    "description": "The first book in the beloved series about a young wizard discovering his magical heritage and attending Hogwarts School of Witchcraft and Wizardry.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg",
+    "tags": ["magic", "school", "friendship", "adventure", "coming-of-age"]
+  },
+  {
+    "id": "great_gatsby",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genres": ["Classic", "Literary Fiction", "American Literature"],
+    "description": "Set in the Jazz Age on prosperous Long Island, this novel captures the decadence and idealism of the Roaring Twenties through the story of Jay Gatsby.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
+    "tags": ["american-dream", "love", "wealth", "tragedy", "classic"]
+  },
+  {
+    "id": "handmaids_tale",
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "genres": ["Dystopian", "Feminist Fiction", "Science Fiction"],
+    "description": "A dystopian novel set in a totalitarian society where women's rights have been stripped away and fertility is controlled by the state.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780385490818-L.jpg",
+    "tags": ["dystopia", "feminism", "oppression", "rebellion", "future"]
+  },
+  {
+    "id": "to_kill_mockingbird",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genres": ["Classic", "Coming-of-age", "Social Commentary"],
+    "description": "A gripping tale of racial injustice and childhood innocence told through the eyes of Scout Finch in Depression-era Alabama.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
+    "tags": ["racism", "justice", "childhood", "moral-courage", "classic"]
+  },
+  {
+    "id": "girl_with_dragon_tattoo",
+    "title": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
+    "genres": ["Mystery", "Thriller", "Crime"],
+    "description": "A journalist and a hacker investigate a wealthy family's dark secrets in this gripping Swedish crime thriller.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307269751-L.jpg",
+    "tags": ["mystery", "crime", "hacker", "secrets", "thriller"]
+  },
+  {
+    "id": "kite_runner",
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "genres": ["Literary Fiction", "Historical Fiction", "Drama"],
+    "description": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781594631931-L.jpg",
+    "tags": ["friendship", "redemption", "afghanistan", "guilt", "forgiveness"]
+  },
+  {
+    "id": "gone_girl",
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "genres": ["Thriller", "Mystery", "Psychological Fiction"],
+    "description": "A psychological thriller about a marriage gone terribly wrong when Amy Dunne disappears on her fifth wedding anniversary.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307588364-L.jpg",
+    "tags": ["marriage", "deception", "psychological", "thriller", "unreliable-narrator"]
+  },
+  {
+    "id": "fault_in_stars",
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "genres": ["Young Adult", "Romance", "Drama"],
+    "description": "A love story between two teenagers who meet in a cancer support group - funny, sad, and inspiring all at once.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780525478812-L.jpg",
+    "tags": ["love", "cancer", "teenage", "death", "hope"]
+  },
+  {
+    "id": "lord_of_rings",
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genres": ["Fantasy", "Adventure", "Epic"],
+    "description": "The epic fantasy adventure following Frodo Baggins and the Fellowship as they journey to destroy the One Ring and defeat the Dark Lord Sauron.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg",
+    "tags": ["epic", "fantasy", "adventure", "friendship", "good-vs-evil"]
+  },
+  {
+    "id": "catcher_in_rye",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genres": ["Classic", "Coming-of-age", "Literary Fiction"],
+    "description": "The story of Holden Caulfield, a teenager who has been expelled from prep school and wanders around New York City.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780316769174-L.jpg",
+    "tags": ["teenage", "alienation", "coming-of-age", "classic", "identity"]
+  },
+  {
+    "id": "brave_new_world",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genres": ["Dystopian", "Science Fiction", "Classic"],
+    "description": "A dystopian novel set in a technologically advanced future where society is rigidly controlled through technology and conditioning.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060850524-L.jpg",
+    "tags": ["dystopia", "technology", "society", "freedom", "future"]
+  },
+  {
+    "id": "one_flew_cuckoos_nest",
+    "title": "One Flew Over the Cuckoo's Nest",
+    "author": "Ken Kesey",
+    "genres": ["Classic", "Drama", "Mental Health"],
+    "description": "The story of Randle Patrick McMurphy and his battle against the oppressive Nurse Ratched in a mental institution.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780451163967-L.jpg",
+    "tags": ["rebellion", "mental-health", "freedom", "authority", "classic"]
+  },
+  {
+    "id": "outlander",
+    "title": "Outlander",
+    "author": "Diana Gabaldon",
+    "genres": ["Romance", "Time Travel", "Historical Fiction"],
+    "description": "A WWII combat nurse is mysteriously swept back in time to 18th-century Scotland, where she meets a Highland warrior.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780440212560-L.jpg",
+    "tags": ["time-travel", "romance", "scotland", "adventure", "historical"]
+  },
+  {
+    "id": "hitchhikers_guide",
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "genres": ["Science Fiction", "Comedy", "Adventure"],
+    "description": "A comic science fiction adventure following Arthur Dent as he travels through space after Earth is destroyed to make way for a hyperspace bypass.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780345391803-L.jpg",
+    "tags": ["humor", "space", "adventure", "absurd", "comedy"]
+  },
+  {
+    "id": "hunger_games",
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genres": ["Young Adult", "Dystopian", "Action"],
+    "description": "In a dystopian future, teenagers are forced to fight to the death in televised games as entertainment for the Capitol.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
+    "tags": ["dystopia", "survival", "rebellion", "young-adult", "action"]
+  },
+  {
+    "id": "sherlock_holmes",
+    "title": "The Adventures of Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "genres": ["Mystery", "Detective", "Classic"],
+    "description": "A collection of twelve detective stories featuring the brilliant Sherlock Holmes and his loyal companion Dr. Watson.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486474915-L.jpg",
+    "tags": ["detective", "mystery", "logic", "classic", "crime"]
+  },
+  {
+    "id": "da_vinci_code",
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genres": ["Thriller", "Mystery", "Adventure"],
+    "description": "A symbologist gets caught up in a deadly conspiracy involving secret societies, religious history, and hidden codes.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
+    "tags": ["conspiracy", "symbols", "history", "thriller", "mystery"]
+  },
+  {
+    "id": "life_of_pi",
+    "title": "Life of Pi",
+    "author": "Yann Martel",
+    "genres": ["Adventure", "Philosophical Fiction", "Survival"],
+    "description": "A young man survives 227 days stranded on a lifeboat in the Pacific Ocean with a Bengal tiger named Richard Parker.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780156027328-L.jpg",
+    "tags": ["survival", "ocean", "faith", "animals", "adventure"]
+  },
+  {
+    "id": "alchemist",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genres": ["Philosophy", "Adventure", "Spiritual"],
+    "description": "A young shepherd boy's journey to find treasure leads him to discover the importance of following one's dreams and personal legend.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg",
+    "tags": ["dreams", "journey", "spiritual", "wisdom", "destiny"]
+  },
+  {
+    "id": "color_purple",
+    "title": "The Color Purple",
+    "author": "Alice Walker",
+    "genres": ["Literary Fiction", "Historical Fiction", "Drama"],
+    "description": "The story of Celie, an African American woman in the early 20th century South, and her journey from oppression to empowerment.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780156028356-L.jpg",
+    "tags": ["empowerment", "racism", "women", "south", "resilience"]
+  },
+  {
+    "id": "beloved",
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "genres": ["Literary Fiction", "Historical Fiction", "Horror"],
+    "description": "A haunting story about slavery's legacy, following Sethe, a former slave haunted by the ghost of her deceased daughter.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400033416-L.jpg",
+    "tags": ["slavery", "trauma", "family", "supernatural", "powerful"]
+  },
+  {
+    "id": "hundred_solitude",
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "genres": ["Magical Realism", "Literary Fiction", "Family Saga"],
+    "description": "The multi-generational story of the Buendía family in the fictional town of Macondo, blending reality with fantastical elements.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060883287-L.jpg",
+    "tags": ["magical-realism", "family", "generations", "latin-america", "surreal"]
+  },
+  {
+    "id": "on_the_road",
+    "title": "On the Road",
+    "author": "Jack Kerouac",
+    "genres": ["Classic", "Beat Generation", "Adventure"],
+    "description": "A novel about the adventures of Sal Paradise and Dean Moriarty as they travel across America in search of meaning and experience.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780140283297-L.jpg",
+    "tags": ["travel", "freedom", "america", "beat-generation", "youth"]
+  },
+  {
+    "id": "slaughterhouse_five",
+    "title": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut",
+    "genres": ["Science Fiction", "Anti-war", "Satire"],
+    "description": "The story of Billy Pilgrim, who becomes 'unstuck in time' and experiences his life out of sequence, including his time as a POW in WWII.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780440180296-L.jpg",
+    "tags": ["time-travel", "war", "satire", "philosophy", "dark-humor"]
+  },
+  {
+    "id": "catch_22",
+    "title": "Catch-22",
+    "author": "Joseph Heller",
+    "genres": ["Satire", "War Fiction", "Dark Comedy"],
+    "description": "A satirical novel about American airmen in WWII, exploring the absurdity of war and bureaucratic paradoxes.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780684833392-L.jpg",
+    "tags": ["war", "satire", "absurd", "military", "dark-comedy"]
+  },
+  {
+    "id": "grapes_of_wrath",
+    "title": "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "genres": ["Classic", "Historical Fiction", "Social Commentary"],
+    "description": "The story of the Joad family's migration from Oklahoma to California during the Great Depression in search of a better life.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780143039433-L.jpg",
+    "tags": ["depression", "family", "migration", "poverty", "america"]
+  },
+  {
+    "id": "jane_eyre",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genres": ["Classic", "Romance", "Gothic"],
+    "description": "The story of an orphaned girl who becomes a governess and falls in love with her brooding employer, Mr. Rochester.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
+    "tags": ["romance", "gothic", "independence", "classic", "strong-heroine"]
+  },
+  {
+    "id": "wuthering_heights",
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "genres": ["Classic", "Romance", "Gothic"],
+    "description": "A dark tale of passion and revenge centered on the tumultuous relationship between Heathcliff and Catherine Earnshaw.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780141439556-L.jpg",
+    "tags": ["passion", "revenge", "gothic", "dark", "classic"]
+  },
+  {
+    "id": "moby_dick",
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "genres": ["Classic", "Adventure", "Philosophy"],
+    "description": "The epic tale of Captain Ahab's obsessive quest for revenge against the white whale that destroyed his ship and took his leg.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780142437247-L.jpg",
+    "tags": ["whale", "obsession", "sea", "epic", "adventure"]
+  },
+  {
+    "id": "dracula",
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "genres": ["Horror", "Gothic", "Classic"],
+    "description": "The classic vampire novel about Count Dracula's attempt to move from Transylvania to England and the battle to stop him.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486411095-L.jpg",
+    "tags": ["vampire", "horror", "gothic", "supernatural", "classic"]
+  },
+  {
+    "id": "frankenstein",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genres": ["Horror", "Science Fiction", "Gothic"],
+    "description": "A young scientist creates a creature through scientific experimentation, exploring themes of creation, responsibility, and what makes us human.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486282114-L.jpg",
+    "tags": ["monster", "science", "creation", "gothic", "responsibility"]
+  },
+  {
+    "id": "count_monte_cristo",
+    "title": "The Count of Monte Cristo",
+    "author": "Alexandre Dumas",
+    "genres": ["Adventure", "Historical Fiction", "Revenge"],
+    "description": "The story of Edmond Dantès, who is falsely imprisoned and later escapes to seek revenge against those who wronged him.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486456430-L.jpg",
+    "tags": ["revenge", "adventure", "justice", "betrayal", "classic"]
+  },
+  {
+    "id": "war_and_peace",
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "genres": ["Classic", "Historical Fiction", "Epic"],
+    "description": "An epic novel following the lives of several aristocratic families during the Napoleonic era in Russia.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780199232765-L.jpg",
+    "tags": ["epic", "russia", "war", "napoleon", "families"]
+  },
+  {
+    "id": "anna_karenina",
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "genres": ["Classic", "Romance", "Tragedy"],
+    "description": "The tragic story of Anna Karenina's affair and its consequences, alongside the contrasting story of Levin's search for meaning.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780140449174-L.jpg",
+    "tags": ["adultery", "love", "society", "tragedy", "russia"]
+  },
+  {
+    "id": "crime_punishment",
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "genres": ["Classic", "Psychological Fiction", "Crime"],
+    "description": "A psychological drama about a poor student who commits murder and the mental anguish and moral dilemmas he faces afterward.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780140449136-L.jpg",
+    "tags": ["psychology", "crime", "guilt", "morality", "russia"]
+  },
+  {
+    "id": "brothers_karamazov",
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "genres": ["Classic", "Philosophy", "Family Drama"],
+    "description": "A philosophical novel exploring faith, doubt, and morality through the story of three brothers and their father's murder.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780374528379-L.jpg",
+    "tags": ["philosophy", "faith", "family", "murder", "morality"]
+  },
+  {
+    "id": "les_miserables",
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "genres": ["Classic", "Historical Fiction", "Drama"],
+    "description": "The story of ex-convict Jean Valjean and his path to redemption in 19th-century France, exploring themes of justice, love, and sacrifice.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780451419439-L.jpg",
+    "tags": ["redemption", "justice", "france", "sacrifice", "epic"]
+  },
+  {
+    "id": "don_quixote",
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "genres": ["Classic", "Adventure", "Satire"],
+    "description": "The adventures of an aging gentleman who reads so many chivalric romances that he decides to become a knight-errant himself.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060934347-L.jpg",
+    "tags": ["adventure", "idealism", "satire", "spain", "classic"]
+  },
+  {
+    "id": "ulysses",
+    "title": "Ulysses",
+    "author": "James Joyce",
+    "genres": ["Literary Fiction", "Modernist", "Stream of Consciousness"],
+    "description": "A complex modernist novel that parallels Homer's Odyssey, following Leopold Bloom through a single day in Dublin.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780394703800-L.jpg",
+    "tags": ["modernist", "dublin", "stream-of-consciousness", "complex", "experimental"]
+  },
+  {
+    "id": "lolita",
+    "title": "Lolita",
+    "author": "Vladimir Nabokov",
+    "genres": ["Literary Fiction", "Controversial", "Psychological"],
+    "description": "A controversial novel about Humbert Humbert's obsession with twelve-year-old Dolores Haze, told through beautiful but disturbing prose.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780679723165-L.jpg",
+    "tags": ["controversial", "obsession", "beautiful-writing", "dark", "psychological"]
+  },
+  {
+    "id": "metamorphosis",
+    "title": "The Metamorphosis",
+    "author": "Franz Kafka",
+    "genres": ["Classic", "Surreal", "Existential"],
+    "description": "The story of Gregor Samsa, who wakes up one morning transformed into a giant insect, exploring themes of alienation and humanity.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486290300-L.jpg",
+    "tags": ["transformation", "alienation", "surreal", "existential", "family"]
+  },
+  {
+    "id": "kafka_on_shore",
+    "title": "Kafka on the Shore",
+    "author": "Haruki Murakami",
+    "genres": ["Magical Realism", "Contemporary Fiction", "Surreal"],
+    "description": "A surreal story following a teenage boy who runs away from home and an elderly man who can talk to cats.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400079278-L.jpg",
+    "tags": ["surreal", "cats", "magical-realism", "japan", "coming-of-age"]
+  },
+  {
+    "id": "norwegian_wood",
+    "title": "Norwegian Wood",
+    "author": "Haruki Murakami",
+    "genres": ["Literary Fiction", "Romance", "Coming-of-age"],
+    "description": "A nostalgic story of loss and sexuality set in 1960s Tokyo, following a college student caught between two very different women.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg",
+    "tags": ["nostalgia", "love", "1960s", "japan", "melancholy"]
+  },
+  {
+    "id": "wind_up_bird",
+    "title": "The Wind-Up Bird Chronicle",
+    "author": "Haruki Murakami",
+    "genres": ["Magical Realism", "Mystery", "Surreal"],
+    "description": "A man's search for his missing cat and wife leads him into a surreal world of strange characters and mysterious events.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780679775430-L.jpg",
+    "tags": ["surreal", "mystery", "marriage", "strange", "magical-realism"]
+  },
+  {
+    "id": "neuromancer",
+    "title": "Neuromancer",
+    "author": "William Gibson",
+    "genres": ["Science Fiction", "Cyberpunk", "Technology"],
+    "description": "A groundbreaking cyberpunk novel about a washed-up computer hacker hired for one last job in cyberspace.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780441569595-L.jpg",
+    "tags": ["cyberpunk", "technology", "hacker", "cyberspace", "future"]
+  },
+  {
+    "id": "foundation",
+    "title": "Foundation",
+    "author": "Isaac Asimov",
+    "genres": ["Science Fiction", "Space Opera", "Future History"],
+    "description": "The first book in Asimov's Foundation series, about psychohistory and the fall and rise of galactic civilizations.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780553293357-L.jpg",
+    "tags": ["space", "empire", "psychohistory", "future", "science"]
+  },
+  {
+    "id": "enders_game",
+    "title": "Ender's Game",
+    "author": "Orson Scott Card",
+    "genres": ["Science Fiction", "Young Adult", "Military"],
+    "description": "A brilliant young boy is recruited to attend a military academy in space to prepare for an alien invasion.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780812550702-L.jpg",
+    "tags": ["space", "military", "children", "aliens", "strategy"]
+  },
+  {
+    "id": "stranger_things",
+    "title": "Stranger in a Strange Land",
+    "author": "Robert A. Heinlein",
+    "genres": ["Science Fiction", "Philosophy", "Social Commentary"],
+    "description": "A human raised by Martians returns to Earth and challenges human customs and beliefs with his alien perspective.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780441788385-L.jpg",
+    "tags": ["mars", "culture", "philosophy", "alien", "society"]
+  },
+  {
+    "id": "martian",
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "genres": ["Science Fiction", "Survival", "Humor"],
+    "description": "An astronaut stranded on Mars must use his scientific knowledge and ingenuity to survive until rescue is possible.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg",
+    "tags": ["mars", "survival", "science", "humor", "space"]
+  },
+  {
+    "id": "left_hand_darkness",
+    "title": "The Left Hand of Darkness",
+    "author": "Ursula K. Le Guin",
+    "genres": ["Science Fiction", "Gender Studies", "Political Fiction"],
+    "description": "A human envoy visits a planet where inhabitants can change gender, exploring themes of sexuality, politics, and humanity.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780441478125-L.jpg",
+    "tags": ["gender", "politics", "alien", "snow", "diplomacy"]
+  },
+  {
+    "id": "ready_player_one",
+    "title": "Ready Player One",
+    "author": "Ernest Cline",
+    "genres": ["Science Fiction", "Virtual Reality", "Adventure"],
+    "description": "In a dystopian future, people escape reality through a virtual world called the OASIS, where a young man hunts for a hidden treasure.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307887436-L.jpg",
+    "tags": ["virtual-reality", "gaming", "80s-nostalgia", "treasure-hunt", "dystopia"]
+  },
+  {
+    "id": "snow_crash",
+    "title": "Snow Crash",
+    "author": "Neal Stephenson",
+    "genres": ["Science Fiction", "Cyberpunk", "Satire"],
+    "description": "A hacker and pizza delivery driver investigates a new drug called Snow Crash in a near-future America dominated by corporate franchises.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780553380958-L.jpg",
+    "tags": ["cyberpunk", "virtual-reality", "hacker", "corporate", "satire"]
+  },
+  {
+    "id": "hyperion",
+    "title": "Hyperion",
+    "author": "Dan Simmons",
+    "genres": ["Science Fiction", "Space Opera", "Canterbury Tales"],
+    "description": "Seven pilgrims journey to the planet Hyperion, each telling their story Canterbury Tales-style in this epic space opera.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780553283686-L.jpg",
+    "tags": ["space", "pilgrimage", "multiple-stories", "epic", "time"]
+  },
+  {
+    "id": "contact",
+    "title": "Contact",
+    "author": "Carl Sagan",
+    "genres": ["Science Fiction", "First Contact", "Hard Science"],
+    "description": "A scientist receives a message from extraterrestrial intelligence, leading to humanity's first contact with alien life.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780671434786-L.jpg",
+    "tags": ["aliens", "first-contact", "science", "seti", "communication"]
+  },
+  {
+    "id": "flowers_algernon",
+    "title": "Flowers for Algernon",
+    "author": "Daniel Keyes",
+    "genres": ["Science Fiction", "Drama", "Emotional"],
+    "description": "The story of Charlie Gordon, a man with intellectual disabilities who undergoes experimental surgery to increase his intelligence.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780156030304-L.jpg",
+    "tags": ["intelligence", "experiment", "emotional", "ethics", "humanity"]
+  },
+  {
+    "id": "fahrenheit_451",
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "genres": ["Dystopian", "Science Fiction", "Censorship"],
+    "description": "In a future where books are banned and burned, a fireman begins to question his role in society's destruction of knowledge.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781451673319-L.jpg",
+    "tags": ["censorship", "books", "dystopia", "knowledge", "rebellion"]
+  },
+  {
+    "id": "time_machine",
+    "title": "The Time Machine",
+    "author": "H.G. Wells",
+    "genres": ["Science Fiction", "Time Travel", "Classic"],
+    "description": "A Victorian scientist travels to the year 802,701 and discovers humanity has evolved into two distinct species.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486284729-L.jpg",
+    "tags": ["time-travel", "evolution", "future", "class-divide", "classic"]
+  },
+  {
+    "id": "invisible_man_wells",
+    "title": "The Invisible Man",
+    "author": "H.G. Wells",
+    "genres": ["Science Fiction", "Horror", "Classic"],
+    "description": "A scientist discovers how to make himself invisible but finds that the process drives him to madness and violence.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486270715-L.jpg",
+    "tags": ["invisibility", "madness", "science", "isolation", "classic"]
+  },
+  {
+    "id": "war_worlds",
+    "title": "The War of the Worlds",
+    "author": "H.G. Wells",
+    "genres": ["Science Fiction", "Alien Invasion", "Classic"],
+    "description": "Martians invade Earth with superior technology, bringing humanity to the brink of extinction in this classic alien invasion story.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486295060-L.jpg",
+    "tags": ["alien-invasion", "mars", "survival", "technology", "classic"]
+  },
+  {
+    "id": "island_dr_moreau",
+    "title": "The Island of Dr. Moreau",
+    "author": "H.G. Wells",
+    "genres": ["Science Fiction", "Horror", "Ethics"],
+    "description": "A man is shipwrecked on an island where a mad scientist conducts horrific experiments to transform animals into human-like beings.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486290270-L.jpg",
+    "tags": ["mad-scientist", "ethics", "transformation", "horror", "island"]
+  },
+  {
+    "id": "brave_new_world_revisited",
+    "title": "Brave New World Revisited",
+    "author": "Aldous Huxley",
+    "genres": ["Non-fiction", "Philosophy", "Social Commentary"],
+    "description": "Huxley's non-fiction follow-up to his novel, examining how the world had moved toward his dystopian vision.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060898526-L.jpg",
+    "tags": ["dystopia", "society", "prophecy", "technology", "analysis"]
+  },
+  {
+    "id": "walden",
+    "title": "Walden",
+    "author": "Henry David Thoreau",
+    "genres": ["Philosophy", "Nature", "Memoir"],
+    "description": "Thoreau's reflections on simple living in natural surroundings, based on his experiment living at Walden Pond.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486284958-L.jpg",
+    "tags": ["nature", "simple-living", "philosophy", "solitude", "transcendentalism"]
+  },
+  {
+    "id": "civil_disobedience",
+    "title": "Civil Disobedience",
+    "author": "Henry David Thoreau",
+    "genres": ["Philosophy", "Political", "Essay"],
+    "description": "Thoreau's influential essay arguing that individuals should not permit government to override their conscience.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486275636-L.jpg",
+    "tags": ["civil-rights", "government", "conscience", "resistance", "philosophy"]
+  },
+  {
+    "id": "meditations",
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "genres": ["Philosophy", "Stoicism", "Ancient"],
+    "description": "The personal writings of the Roman Emperor Marcus Aurelius, offering insights into Stoic philosophy and self-reflection.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486298238-L.jpg",
+    "tags": ["stoicism", "philosophy", "self-reflection", "ancient", "wisdom"]
+  },
+  {
+    "id": "republic",
+    "title": "The Republic",
+    "author": "Plato",
+    "genres": ["Philosophy", "Political Theory", "Ancient"],
+    "description": "Plato's foundational work on justice, the ideal state, and the nature of reality, featuring the famous Allegory of the Cave.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486411217-L.jpg",
+    "tags": ["justice", "ideal-state", "cave-allegory", "ancient", "political-theory"]
+  },
+  {
+    "id": "nicomachean_ethics",
+    "title": "Nicomachean Ethics",
+    "author": "Aristotle",
+    "genres": ["Philosophy", "Ethics", "Ancient"],
+    "description": "Aristotle's exploration of moral philosophy, examining what constitutes a good life and virtuous character.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486404242-L.jpg",
+    "tags": ["ethics", "virtue", "good-life", "ancient", "moral-philosophy"]
+  },
+  {
+    "id": "mans_search_meaning",
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "genres": ["Psychology", "Philosophy", "Memoir"],
+    "description": "A Holocaust survivor's account of his experiences in Nazi concentration camps and his psychotherapeutic method of finding meaning in suffering.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780807014295-L.jpg",
+    "tags": ["meaning", "holocaust", "psychology", "suffering", "resilience"]
+  },
+  {
+    "id": "thinking_fast_slow",
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "genres": ["Psychology", "Behavioral Economics", "Science"],
+    "description": "A groundbreaking exploration of the two systems that drive the way we think: fast, intuitive thinking and slow, deliberate thinking.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
+    "tags": ["psychology", "decision-making", "behavioral-economics", "cognition", "bias"]
+  },
+  {
+    "id": "sapiens",
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "genres": ["History", "Anthropology", "Science"],
+    "description": "A thought-provoking exploration of how Homo sapiens came to dominate the world, from the Stone Age to the present.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
+    "tags": ["human-history", "evolution", "civilization", "anthropology", "big-picture"]
+  },
+  {
+    "id": "homo_deus",
+    "title": "Homo Deus: A Brief History of Tomorrow",
+    "author": "Yuval Noah Harari",
+    "genres": ["Futurism", "Technology", "Philosophy"],
+    "description": "Harari's follow-up to Sapiens, exploring what the future might hold for humanity in an age of artificial intelligence and biotechnology.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062464316-L.jpg",
+    "tags": ["future", "technology", "AI", "biotechnology", "humanity"]
+  },
+  {
+    "id": "brief_history_time",
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "genres": ["Science", "Physics", "Cosmology"],
+    "description": "Hawking's accessible exploration of cosmology, black holes, and the nature of time and the universe.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg",
+    "tags": ["physics", "cosmology", "black-holes", "time", "universe"]
+  },
+  {
+    "id": "selfish_gene",
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "genres": ["Science", "Biology", "Evolution"],
+    "description": "Dawkins' influential book explaining evolution from the gene's perspective, introducing the concept of memes.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780199291151-L.jpg",
+    "tags": ["evolution", "genetics", "biology", "memes", "natural-selection"]
+  },
+  {
+    "id": "origin_species",
+    "title": "On the Origin of Species",
+    "author": "Charles Darwin",
+    "genres": ["Science", "Biology", "Evolution"],
+    "description": "Darwin's groundbreaking work introducing the theory of evolution by natural selection.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486450063-L.jpg",
+    "tags": ["evolution", "natural-selection", "biology", "species", "groundbreaking"]
+  },
+  {
+    "id": "guns_germs_steel",
+    "title": "Guns, Germs, and Steel",
+    "author": "Jared Diamond",
+    "genres": ["History", "Anthropology", "Geography"],
+    "description": "An examination of how geography and environment shaped the fates of human societies throughout history.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780393317558-L.jpg",
+    "tags": ["history", "geography", "civilization", "environment", "societies"]
+  }
+]

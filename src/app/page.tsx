@@ -18,13 +18,34 @@ export default function HomePage() {
   const router = useRouter();
 
   const handleSearch = () => {
+    console.log("Search clicked, query:", query);
     if (query.trim()) {
-      router.push(`/recommendations?q=${encodeURIComponent(query)}`);
+      console.log("Navigating to recommendations with query:", query);
+      const url = `/recommendations?q=${encodeURIComponent(query)}`;
+      console.log("Full URL:", url);
+      try {
+        router.push(url);
+      } catch (error) {
+        console.error("Router.push failed:", error);
+        // Fallback to window.location
+        window.location.href = url;
+      }
+    } else {
+      console.log("Query is empty, not navigating");
     }
   };
 
   const handlePresetClick = (preset: string) => {
-    router.push(`/recommendations?q=${encodeURIComponent(preset)}`);
+    console.log("Preset clicked:", preset);
+    const url = `/recommendations?q=${encodeURIComponent(preset)}`;
+    console.log("Preset URL:", url);
+    try {
+      router.push(url);
+    } catch (error) {
+      console.error("Router.push failed for preset:", error);
+      // Fallback to window.location
+      window.location.href = url;
+    }
   };
 
   const presets = [
@@ -61,11 +82,18 @@ export default function HomePage() {
             <Input
               placeholder="e.g., I want something like The Martian but funnier&hellip;"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                console.log("Input changed:", e.target.value);
+                setQuery(e.target.value);
+              }}
               onKeyPress={(e) => e.key === "Enter" && handleSearch()}
               className="flex-1"
             />
-            <Button onClick={handleSearch} disabled={!query.trim()}>
+            <Button
+              onClick={handleSearch}
+              disabled={!query.trim()}
+              className={!query.trim() ? "opacity-50" : ""}
+            >
               <Search className="h-4 w-4" />
             </Button>
           </div>

@@ -1,0 +1,344 @@
+[
+  {
+    "id": "atomic_habits",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genres": ["Self-Help", "Psychology", "Productivity"],
+    "description": "An Easy & Proven Way to Build Good Habits & Break Bad Ones. Tiny changes, remarkable results. No matter your goals, Atomic Habits offers a proven framework for improving every day.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+    "tags": ["habits", "productivity", "self-improvement", "psychology", "success"]
+  },
+  {
+    "id": "educated",
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genres": ["Memoir", "Biography", "Education"],
+    "description": "A memoir about a young girl who, kept out of school, leaves her survivalist family and goes on to earn a PhD from Cambridge University.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg",
+    "tags": ["education", "family", "resilience", "transformation", "inspiring"]
+  },
+  {
+    "id": "seven_husbands_evelyn",
+    "title": "The Seven Husbands of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "genres": ["Romance", "Historical Fiction", "LGBTQ+"],
+    "description": "A reclusive Hollywood icon finally tells her story to a young journalist, revealing her scandalous life, her seven marriages, and the price of fame and love.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781501161933-L.jpg",
+    "tags": ["love", "fame", "secrets", "Hollywood", "emotional"]
+  },
+  {
+    "id": "where_crawdads_sing",
+    "title": "Where the Crawdads Sing",
+    "author": "Delia Owens",
+    "genres": ["Fiction", "Mystery", "Coming-of-age"],
+    "description": "A mystery about a young woman who raised herself in the marshes of the deep South, becoming a suspect in a murder case.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780735219090-L.jpg",
+    "tags": ["mystery", "nature", "isolation", "coming-of-age", "suspense"]
+  },
+  {
+    "id": "dune",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genres": ["Science Fiction", "Fantasy", "Adventure"],
+    "description": "Set in the distant future amidst a feudal interstellar society, this epic tale follows young Paul Atreides as his family becomes embroiled in a war for control of the desert planet Arrakis.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg",
+    "tags": ["epic", "space", "politics", "power", "adventure"]
+  },
+  {
+    "id": "becoming",
+    "title": "Becoming",
+    "author": "Michelle Obama",
+    "genres": ["Memoir", "Biography", "Politics"],
+    "description": "Former First Lady Michelle Obama's deeply personal memoir describing her journey from childhood to the White House.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781524763138-L.jpg",
+    "tags": ["politics", "inspiration", "leadership", "family", "growth"]
+  },
+  {
+    "id": "project_hail_mary",
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "genres": ["Science Fiction", "Adventure", "Humor"],
+    "description": "A man wakes up alone on a spaceship with no memory of how he got there, tasked with saving humanity from extinction.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41ImjZpZEpL.jpg",
+    "tags": ["space", "humor", "science", "survival", "optimistic"]
+  },
+  {
+    "id": "midnight_library",
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "genres": ["Fiction", "Philosophy", "Fantasy"],
+    "description": "Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41vhKv3dtNL.jpg",
+    "tags": ["philosophy", "life-choices", "regret", "hope", "uplifting"]
+  },
+  {
+    "id": "circe",
+    "title": "Circe",
+    "author": "Madeline Miller",
+    "genres": ["Mythology", "Fantasy", "Historical Fiction"],
+    "description": "A stunning reimagining of the Greek myth of Circe, the witch who transforms Odysseus's men into pigs.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41GeNzoESfL.jpg",
+    "tags": ["mythology", "feminism", "magic", "transformation", "beautiful"]
+  },
+  {
+    "id": "song_of_achilles",
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "genres": ["Mythology", "Romance", "Historical Fiction"],
+    "description": "A retelling of the Iliad through the relationship between Achilles and Patroclus.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41i3N67rl8L.jpg",
+    "tags": ["mythology", "love", "tragedy", "friendship", "beautiful"]
+  },
+  {
+    "id": "1984",
+    "title": "1984",
+    "author": "George Orwell",
+    "genres": ["Dystopian Fiction", "Political Fiction", "Classic Literature"],
+    "description": "A dystopian social science fiction novel that follows Winston Smith in a totalitarian society.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780452284234-L.jpg",
+    "tags": ["dystopian", "surveillance", "freedom", "politics", "thought-provoking"]
+  },
+  {
+    "id": "pride_prejudice",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genres": ["Romance", "Classic Literature", "Historical Fiction"],
+    "description": "A romantic novel of manners that follows Elizabeth Bennet as she learns about love and social expectations.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+    "tags": ["romance", "wit", "social-class", "marriage", "classic"]
+  },
+  {
+    "id": "hobbit",
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genres": ["Fantasy", "Adventure", "Classic Literature"],
+    "description": "A reluctant Hobbit sets out on an adventure to help dwarves reclaim their mountain home from a dragon.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
+    "tags": ["adventure", "fantasy", "courage", "friendship", "whimsical"]
+  },
+  {
+    "id": "gone_girl",
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "genres": ["Mystery", "Thriller", "Psychological Fiction"],
+    "description": "A psychological thriller about Nick Dunne who becomes the prime suspect in his wife Amy's disappearance.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307588371-L.jpg",
+    "tags": ["psychological", "dark", "marriage", "deception", "twisty"]
+  },
+  {
+    "id": "sapiens",
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "genres": ["History", "Anthropology", "Philosophy"],
+    "description": "A fascinating exploration of how Homo sapiens came to dominate the world.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
+    "tags": ["history", "evolution", "society", "thought-provoking", "educational"]
+  },
+  {
+    "id": "outlander",
+    "title": "Outlander",
+    "author": "Diana Gabaldon",
+    "genres": ["Romance", "Historical Fiction", "Time Travel"],
+    "description": "A WWII nurse is mysteriously swept back in time to 18th-century Scotland.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780440212560-L.jpg",
+    "tags": ["time-travel", "historical", "romance", "adventure", "passionate"]
+  },
+  {
+    "id": "name_of_wind",
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "genres": ["Fantasy", "Adventure", "Coming-of-age"],
+    "description": "The story of Kvothe, a legendary figure who recounts his youth and his journey to become a powerful magician.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780756404079-L.jpg",
+    "tags": ["magic", "music", "adventure", "storytelling", "lyrical"]
+  },
+  {
+    "id": "da_vinci_code",
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genres": ["Mystery", "Thriller", "Adventure"],
+    "description": "A symbologist investigates a murder in the Louvre and uncovers a religious conspiracy.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
+    "tags": ["mystery", "religion", "art", "conspiracy", "fast-paced"]
+  },
+  {
+    "id": "martian",
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "genres": ["Science Fiction", "Adventure", "Survival"],
+    "description": "An astronaut becomes stranded on Mars and must use his ingenuity to survive until rescue.",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg",
+    "tags": ["survival", "science", "humor", "problem-solving", "optimistic"]
+  },
+  {
+    "id": "hunger_games",
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genres": ["Dystopian Fiction", "Young Adult", "Adventure"],
+    "description": "In a dystopian future, teenagers are forced to fight to the death in a televised competition.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41V4sF2VW2L.jpg",
+    "tags": ["dystopian", "survival", "rebellion", "young-adult", "action"]
+  },
+  {
+    "id": "harry_potter_1",
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "genres": ["Fantasy", "Young Adult", "Adventure"],
+    "description": "A young wizard discovers his magical heritage and begins his education at Hogwarts School.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51HSkTKlauL.jpg",
+    "tags": ["magic", "friendship", "adventure", "coming-of-age", "whimsical"]
+  },
+  {
+    "id": "to_kill_mockingbird",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genres": ["Classic Literature", "Historical Fiction", "Coming-of-age"],
+    "description": "A young girl grows up in the American South and learns about morality and justice.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41Q8KjgJ3HL.jpg",
+    "tags": ["justice", "morality", "childhood", "racism", "classic"]
+  },
+  {
+    "id": "great_gatsby",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genres": ["Classic Literature", "Historical Fiction", "Romance"],
+    "description": "The story of Jay Gatsby's obsessive pursuit of the American Dream in the Jazz Age.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41NssxNlPlL.jpg",
+    "tags": ["american-dream", "wealth", "love", "tragedy", "classic"]
+  },
+  {
+    "id": "lord_rings_1",
+    "title": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "genres": ["Fantasy", "Adventure", "Epic"],
+    "description": "A hobbit inherits a powerful ring and must journey to destroy it before evil forces claim it.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51EstVXM1UL.jpg",
+    "tags": ["epic", "fantasy", "friendship", "adventure", "good-vs-evil"]
+  },
+  {
+    "id": "catcher_rye",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genres": ["Classic Literature", "Coming-of-age", "Fiction"],
+    "description": "A teenager's story of alienation and his search for authenticity in an adult world.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51v1T53V1xL.jpg",
+    "tags": ["coming-of-age", "alienation", "teenager", "authenticity", "classic"]
+  },
+  {
+    "id": "girl_train",
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "genres": ["Mystery", "Thriller", "Psychological Fiction"],
+    "description": "A woman becomes entangled in a missing person case that changes her life forever.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41Fqi4YL7EL.jpg",
+    "tags": ["psychological", "mystery", "alcoholism", "unreliable-narrator", "suspense"]
+  },
+  {
+    "id": "fault_stars",
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "genres": ["Young Adult", "Romance", "Contemporary Fiction"],
+    "description": "Two teenagers with cancer fall in love and embark on a journey that changes their lives.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41JR0R7KMWL.jpg",
+    "tags": ["young-adult", "cancer", "love", "tragedy", "emotional"]
+  },
+  {
+    "id": "handmaids_tale",
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "genres": ["Dystopian Fiction", "Feminist Literature", "Science Fiction"],
+    "description": "In a totalitarian society, women are forced into reproductive servitude.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41R%2BIXjdYZL.jpg",
+    "tags": ["dystopian", "feminism", "oppression", "reproduction", "political"]
+  },
+  {
+    "id": "life_pi",
+    "title": "Life of Pi",
+    "author": "Yann Martel",
+    "genres": ["Adventure", "Philosophical Fiction", "Survival"],
+    "description": "A young man survives 227 days stranded on a lifeboat with a Bengal tiger.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41Q8wjDSkUL.jpg",
+    "tags": ["survival", "spirituality", "animals", "philosophical", "adventure"]
+  },
+  {
+    "id": "kite_runner",
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "genres": ["Historical Fiction", "Drama", "Coming-of-age"],
+    "description": "A story of friendship, guilt, and redemption set against the backdrop of Afghanistan's tumultuous history.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51pJKXY2eUL.jpg",
+    "tags": ["friendship", "guilt", "redemption", "afghanistan", "emotional"]
+  },
+  {
+    "id": "help",
+    "title": "The Help",
+    "author": "Kathryn Stockett",
+    "genres": ["Historical Fiction", "Drama", "Social Issues"],
+    "description": "The story of African American maids working in white households in 1960s Mississippi.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41Q8wjQXSkL.jpg",
+    "tags": ["civil-rights", "racism", "friendship", "courage", "historical"]
+  },
+  {
+    "id": "silent_patient",
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "genres": ["Mystery", "Thriller", "Psychological Fiction"],
+    "description": "A woman refuses to speak after allegedly murdering her husband, and a psychotherapist becomes obsessed with treating her.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41R%2BJIjzYZL.jpg",
+    "tags": ["psychological", "mystery", "silence", "obsession", "twist"]
+  },
+  {
+    "id": "book_thief",
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "genres": ["Historical Fiction", "Young Adult", "War"],
+    "description": "Death narrates the story of a young girl living with a foster family in Nazi Germany who steals books.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41m2BwsVgDL.jpg",
+    "tags": ["wwii", "books", "death", "courage", "emotional"]
+  },
+  {
+    "id": "thirteen_reasons",
+    "title": "Thirteen Reasons Why",
+    "author": "Jay Asher",
+    "genres": ["Young Adult", "Contemporary Fiction", "Drama"],
+    "description": "A teenager receives cassette tapes from a classmate who recently committed suicide, explaining why she ended her life.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41Q8wXSkL.jpg",
+    "tags": ["suicide", "bullying", "mental-health", "young-adult", "serious"]
+  },
+  {
+    "id": "little_women",
+    "title": "Little Women",
+    "author": "Louisa May Alcott",
+    "genres": ["Classic Literature", "Coming-of-age", "Family"],
+    "description": "The story of the four March sisters growing up during the American Civil War.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51EstVXM1UL.jpg",
+    "tags": ["family", "sisters", "coming-of-age", "classic", "heartwarming"]
+  },
+  {
+    "id": "lord_flies",
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "genres": ["Classic Literature", "Dystopian Fiction", "Adventure"],
+    "description": "British boys stranded on an uninhabited island try to govern themselves with disastrous results.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41Q8wjDSkUL.jpg",
+    "tags": ["survival", "human-nature", "civilization", "dark", "classic"]
+  },
+  {
+    "id": "brave_new_world",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genres": ["Dystopian Fiction", "Science Fiction", "Philosophy"],
+    "description": "A dystopian society where humans are genetically bred and conditioned for predetermined roles.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41R%2BJIjdYZL.jpg",
+    "tags": ["dystopian", "genetic-engineering", "conditioning", "philosophy", "thought-provoking"]
+  },
+  {
+    "id": "alchemist",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genres": ["Philosophy", "Adventure", "Spiritual"],
+    "description": "A young shepherd's journey to find treasure leads him to discover his personal legend.",
+    "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41VWiMy7F%2BL.jpg",
+    "tags": ["spiritual", "journey", "dreams", "destiny", "inspirational"]
+  }
+]
