@@ -259,37 +259,6 @@ export default function BookshelvesPage() {
               Read ({userBooks.read?.length || 0})
             </Link>
           </div>
-
-          <div className="mt-8">
-            <h3 className="text-sm font-semibold mb-2 uppercase">
-              Your reading activity
-            </h3>
-            <div className="space-y-1 text-sm text-gray-600">
-              <div>Review Drafts</div>
-              <div>Kindle Notes & Highlights</div>
-              <div>Reading Challenge</div>
-              <div>Year in Books</div>
-              <div>Reading stats</div>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-sm font-semibold mb-2 uppercase">Add books</h3>
-            <div className="space-y-1 text-sm text-gray-600">
-              <div>Amazon book purchases</div>
-              <div>Recommendations</div>
-              <div>Explore</div>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-sm font-semibold mb-2 uppercase">Tools</h3>
-            <div className="space-y-1 text-sm text-gray-600">
-              <div>Find duplicates</div>
-              <div>Widgets</div>
-              <div>Import and export</div>
-            </div>
-          </div>
         </div>
 
         {/* Main Content */}
@@ -344,12 +313,6 @@ export default function BookshelvesPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 w-64"
                 />
-              </div>
-              <div className="text-sm text-gray-600 space-x-2">
-                <span>Batch Edit</span>
-                <span>Settings</span>
-                <span>Stats</span>
-                <span>Print</span>
               </div>
             </div>
           </div>

@@ -134,7 +134,7 @@ export function Navigation() {
             {/* Search Results Dropdown */}
             {isSearchOpen &&
               (searchQuery.length > 2 || searchResults.length > 0) && (
-                <div className="absolute z-50 mt-1 w-full bg-white rounded-md shadow-lg border border-gray-200 max-h-96 overflow-y-auto">
+                <div className="absolute z-50 top-full mt-2 w-full bg-white rounded-md shadow-lg border border-gray-200 max-h-96 overflow-y-auto">
                   {isSearching ? (
                     <div className="p-4 text-center text-gray-500">
                       Searching...
