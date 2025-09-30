@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "AI Goodreads - Personalized Book Recommendations",
   description:
     "Discover your next favorite book with AI-powered recommendations",
+  icons: {
+    icon: "/goodreads_logo.jpeg",
+    shortcut: "/goodreads_logo.jpeg",
+    apple: "/goodreads_logo.jpeg",
+  },
 };
 
 export default function RootLayout({

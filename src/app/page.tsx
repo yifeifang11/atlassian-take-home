@@ -65,14 +65,11 @@ export default function HomePage() {
   // Function to fetch user's shelf data
   const fetchUserShelves = async () => {
     try {
-      console.log("Fetching user shelves...");
       const response = await fetch("/api/user/books");
       if (response.ok) {
         const data = await response.json();
-        console.log("User shelves data received:", data);
         setUserShelves(data);
       } else {
-        console.error("Failed to fetch user shelves - Response not ok:", response.status, response.statusText);
         // Set empty defaults if API fails
         setUserShelves({ read: [], toRead: [], reading: [] });
       }
@@ -160,14 +157,11 @@ export default function HomePage() {
   useEffect(() => {
     const fetchCurrentlyReading = async () => {
       try {
-        console.log("Fetching currently reading books...");
         const response = await fetch("/api/user/reading");
         if (response.ok) {
           const data = await response.json();
-          console.log("Currently reading data received:", data);
           setCurrentlyReading(data);
         } else {
-          console.error("Failed to fetch currently reading books - Response not ok:", response.status, response.statusText);
           setCurrentlyReading({ books: [], isEmpty: true });
         }
       } catch (error) {
@@ -185,14 +179,11 @@ export default function HomePage() {
   useEffect(() => {
     const fetchWantToReadBooks = async () => {
       try {
-        console.log("Fetching want to read books...");
         const response = await fetch("/api/books?shelf=toRead");
         if (response.ok) {
           const data = await response.json();
-          console.log("Want to read data received:", data);
           setWantToReadBooks(data.books || []);
         } else {
-          console.error("Failed to fetch want to read books - Response not ok:", response.status, response.statusText);
           setWantToReadBooks([]);
         }
       } catch (error) {

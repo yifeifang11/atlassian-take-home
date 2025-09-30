@@ -32,37 +32,29 @@ if (!global.mongoose) {
 }
 
 async function dbConnect() {
-  console.log("dbConnect called");
-  
   if (cached.conn) {
-    console.log("Using cached connection");
     return cached.conn;
   }
 
   if (!MONGODB_URI) {
-    console.error("MONGODB_URI is not defined");
     throw new Error(
       "Please define the MONGODB_URI environment variable inside .env.local"
     );
   }
 
   if (!cached.promise) {
-    console.log("Creating new database connection");
     const opts = {
       bufferCommands: false,
     };
 
     cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
-      console.log("Database connected successfully");
       return mongoose;
     });
   }
 
   try {
     cached.conn = await cached.promise;
-    console.log("Database connection established");
   } catch (e) {
-    console.error("Database connection failed:", e);
     cached.promise = null;
     throw e;
   }

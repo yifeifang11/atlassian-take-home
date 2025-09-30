@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "i.kym-cdn.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   eslint: {

@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, MapPin, Calendar, Mail, Settings, Save } from "lucide-react";
+import { MapPin, Calendar, Mail, Settings, Save } from "lucide-react";
 
 interface UserPreferences {
   favoriteGenres: string[];
@@ -197,11 +198,16 @@ export default function ProfilePage() {
           <Card>
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center mb-4">
-                  <User className="w-12 h-12 text-white" />
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-amber-400 relative">
+                  <Image 
+                    src="/chungus.jpg" 
+                    alt="Big Chungus"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                  Alex Johnson
+                  Big Chungus
                 </h2>
                 <p className="text-gray-600 mb-4">Avid Reader & Book Lover</p>
 
@@ -216,7 +222,7 @@ export default function ProfilePage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4" />
-                    <span>alex.johnson@email.com</span>
+                    <span>big.chungus@email.com</span>
                   </div>
                 </div>
               </div>

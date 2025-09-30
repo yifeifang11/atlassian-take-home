@@ -132,29 +132,17 @@ export async function DELETE(req: NextRequest) {
 
 export async function GET() {
   try {
-    console.log("=== GET /api/user/books START ===");
-    console.log("Environment check:");
-    console.log("- NODE_ENV:", process.env.NODE_ENV);
-    console.log("- MONGODB_URI exists:", !!process.env.MONGODB_URI);
-    
     if (!process.env.MONGODB_URI) {
-      console.error("MONGODB_URI is not set");
       return NextResponse.json(
         { error: "Database configuration missing" },
         { status: 500 }
       );
     }
 
-    console.log("Connecting to database...");
     await dbConnect();
-    console.log("Database connected successfully");
-
-    console.log("Querying UserState for userId: default");
     const userState = await UserState.findOne({ userId: "default" });
-    console.log("Query result:", userState ? "Found user state" : "No user state found");
 
     if (!userState) {
-      console.log("No user state found, returning empty data");
       return NextResponse.json({
         read: [],
         toRead: [],
@@ -163,34 +151,16 @@ export async function GET() {
       });
     }
 
-    const result = {
+    return NextResponse.json({
       read: userState.readIds || [],
       toRead: userState.toReadIds || [],
       reading: userState.readingIds || [],
       favorites: userState.favoriteIds || [],
-    };
-
-    console.log("Returning user books data:", {
-      readCount: result.read.length,
-      toReadCount: result.toRead.length,
-      readingCount: result.reading.length,
-      favoritesCount: result.favorites.length
     });
-    console.log("=== GET /api/user/books SUCCESS ===");
-    
-    return NextResponse.json(result);
   } catch (error) {
-    console.error("=== GET /api/user/books ERROR ===");
-    console.error("Error type:", error?.constructor?.name);
-    console.error("Error message:", error instanceof Error ? error.message : "Unknown error");
-    console.error("Error stack:", error instanceof Error ? error.stack : undefined);
-    
+    console.error("Get user books API error:", error);
     return NextResponse.json(
-      { 
-        error: "Failed to fetch user books",
-        details: error instanceof Error ? error.message : "Unknown error",
-        type: error?.constructor?.name || "Unknown"
-      },
+      { error: "Failed to fetch user books" },
       { status: 500 }
     );
   }
