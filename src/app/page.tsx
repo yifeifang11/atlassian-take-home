@@ -549,54 +549,65 @@ export default function HomePage() {
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
           {/* AI Recommendations Section */}
-          <Card data-ai-recommendations>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg font-sans uppercase flex items-center gap-2">
-                <Sparkles className="h-5 w-5" />
-                AI BOOK RECOMMENDATIONS
-              </CardTitle>
-              <CardDescription>
-                Tell us what you're in the mood for and get personalized book
-                recommendations
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex gap-2">
-                  <Input
-                    type="text"
-                    placeholder="e.g., happy books, sci-fi adventure, cozy mystery..."
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-                    className="flex-1"
-                  />
-                  <Button onClick={handleSearch} disabled={!query.trim()}>
-                    <Search className="h-4 w-4 mr-2" />
-                    Get Recommendations
-                  </Button>
-                </div>
-
-                <div className="text-sm text-gray-600">
-                  <span className="font-medium">Quick suggestions:</span>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {presets.map((preset, index) => (
+          <Card
+            data-ai-recommendations
+            className="relative overflow-hidden border border-amber-200 shadow-lg"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-amber-100/30 via-transparent to-yellow-100/20"></div>
+            <div className="relative z-10">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg font-sans uppercase flex items-center gap-2 text-amber-800">
+                  <Sparkles className="h-5 w-5 text-amber-600" />
+                  AI BOOK RECOMMENDATIONS
+                </CardTitle>
+                <CardDescription className="text-amber-700">
+                  Tell us what you're in the mood for and get personalized book
+                  recommendations
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex gap-2">
+                    <Input
+                      type="text"
+                      placeholder="e.g., happy books, sci-fi adventure, cozy mystery..."
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      onKeyPress={(e) => e.key === "Enter" && handleSearch()}
+                      className="flex-1 bg-white border-amber-200 placeholder:text-gray-500"
+                    />
                     <Button
-                      key={index}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => handlePresetClick(preset.text)}
-                      className="text-xs h-8 flex items-center gap-1"
+                      onClick={handleSearch}
+                      disabled={!query.trim()}
+                      className="bg-amber-100 text-amber-800 hover:bg-amber-200 border-amber-200"
                     >
-                      <preset.icon className="h-3 w-3" />
-                      {preset.text}
+                      <Search className="h-4 w-4 mr-2" />
+                      Get Recommendations
                     </Button>
-                  ))}
+                  </div>
+
+                  <div className="text-sm text-amber-700">
+                    <span className="font-medium">Quick suggestions:</span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {presets.map((preset, index) => (
+                      <Button
+                        key={index}
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handlePresetClick(preset.text)}
+                        className="text-xs h-8 flex items-center gap-1 bg-white/60 border-amber-300 text-amber-700 hover:bg-amber-50"
+                      >
+                        <preset.icon className="h-3 w-3" />
+                        {preset.text}
+                      </Button>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
+              </CardContent>
+            </div>
           </Card>
 
           {/* Updates Section */}
