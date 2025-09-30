@@ -24,7 +24,7 @@ const userPreferencesSchema = new mongoose.Schema<IUserPreferences>(
     },
     preferredLength: {
       type: String,
-      enum: ["short", "medium", "long"],
+      enum: ["short", "medium", "long", "any"],
       default: "medium",
     },
     readingGoal: {
