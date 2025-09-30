@@ -17,7 +17,6 @@ const userPreferencesSchema = new mongoose.Schema<IUserPreferences>(
       type: String,
       required: true,
       unique: true,
-      index: true,
     },
     favoriteGenres: {
       type: [String],
