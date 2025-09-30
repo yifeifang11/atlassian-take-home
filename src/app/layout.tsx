@@ -16,7 +16,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "AI Goodreads - Personalized Book Recommendations",
+  title: "Goodreads | Powered By AI",
   description:
     "Discover your next favorite book with AI-powered recommendations",
   icons: {

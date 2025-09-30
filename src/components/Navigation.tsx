@@ -79,7 +79,8 @@ export function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#f9f7f4] shadow-sm border-b border-gray-200"
+    <nav
+      className="sticky top-0 z-50 bg-[#f9f7f4] shadow-sm border-b border-gray-200"
       style={{ backdropFilter: "blur(10px)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

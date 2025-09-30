@@ -199,8 +199,8 @@ export default function ProfilePage() {
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-amber-400 relative">
-                  <Image 
-                    src="/chungus.jpg" 
+                  <Image
+                    src="/chungus.jpg"
                     alt="Big Chungus"
                     fill
                     className="object-cover"
