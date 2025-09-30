@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   description:
     "Discover your next favorite book with AI-powered recommendations",
   icons: {
-    icon: "/goodreads_logo.jpeg",
-    shortcut: "/goodreads_logo.jpeg",
-    apple: "/goodreads_logo.jpeg",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
