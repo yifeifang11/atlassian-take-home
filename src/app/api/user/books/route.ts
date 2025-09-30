@@ -132,11 +132,25 @@ export async function DELETE(req: NextRequest) {
 
 export async function GET() {
   try {
+    console.log("GET /api/user/books - Starting request");
+    
+    if (!process.env.MONGODB_URI) {
+      console.error("MONGODB_URI is not set");
+      return NextResponse.json(
+        { error: "Database configuration missing" },
+        { status: 500 }
+      );
+    }
+
+    console.log("Connecting to database...");
     await dbConnect();
+    console.log("Database connected successfully");
 
     const userState = await UserState.findOne({ userId: "default" });
+    console.log("User state found:", !!userState);
 
     if (!userState) {
+      console.log("No user state found, returning empty data");
       return NextResponse.json({
         read: [],
         toRead: [],
@@ -145,6 +159,7 @@ export async function GET() {
       });
     }
 
+    console.log("Returning user books data");
     return NextResponse.json({
       read: userState.readIds,
       toRead: userState.toReadIds,
@@ -153,8 +168,16 @@ export async function GET() {
     });
   } catch (error) {
     console.error("Get user books API error:", error);
+    console.error("Error details:", {
+      message: error instanceof Error ? error.message : "Unknown error",
+      stack: error instanceof Error ? error.stack : undefined,
+      mongoUri: process.env.MONGODB_URI ? "Set" : "Not set",
+    });
     return NextResponse.json(
-      { error: "Failed to fetch user books" },
+      { 
+        error: "Failed to fetch user books",
+        details: error instanceof Error ? error.message : "Unknown error"
+      },
       { status: 500 }
     );
   }

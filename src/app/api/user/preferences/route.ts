@@ -4,14 +4,28 @@ import { UserPreferences } from "@/models/UserPreferences";
 
 export async function GET() {
   try {
+    console.log("GET /api/user/preferences - Starting request");
+    
+    if (!process.env.MONGODB_URI) {
+      console.error("MONGODB_URI is not set");
+      return NextResponse.json(
+        { error: "Database configuration missing" },
+        { status: 500 }
+      );
+    }
+
+    console.log("Connecting to database...");
     await dbConnect();
+    console.log("Database connected successfully");
 
     // For now, we'll use a hardcoded userId since we don't have authentication
     const userId = "default";
 
     const userPreferences = await UserPreferences.findOne({ userId });
+    console.log("User preferences found:", !!userPreferences);
 
     if (!userPreferences) {
+      console.log("No user preferences found, returning defaults");
       // Return default preferences if none exist
       const defaultPreferences = {
         favoriteGenres: ["Fiction", "Mystery", "Science Fiction"],
@@ -32,11 +46,20 @@ export async function GET() {
       languagePreference: userPreferences.languagePreference,
     };
 
+    console.log("Returning user preferences");
     return NextResponse.json(preferences);
   } catch (error) {
     console.error("Error fetching user preferences:", error);
+    console.error("Error details:", {
+      message: error instanceof Error ? error.message : "Unknown error",
+      stack: error instanceof Error ? error.stack : undefined,
+      mongoUri: process.env.MONGODB_URI ? "Set" : "Not set",
+    });
     return NextResponse.json(
-      { error: "Failed to fetch user preferences" },
+      { 
+        error: "Failed to fetch user preferences",
+        details: error instanceof Error ? error.message : "Unknown error"
+      },
       { status: 500 }
     );
   }
